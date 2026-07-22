@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brujos en Nicaragua — Maestro Amado, linaje ancestral. Consulta gratis por WhatsApp. Amarres de amor caseros y efectivos, limpieza espiritual y tarot profesional. Atención inmediata 24/7.">
+    <title>Brujos en Nicaragua | Maestro Amado | Consulta Gratis 24/7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #111111;
+            --surface: #ffffff;
+            --text: #ffffff;
+            --text-dark: #111111;
+            --cta: #1ea853;
+            --cta-text: #ffffff;
+            --accent: #1ea853;
+            --radius-card: 20px;
+            --radius-btn: 50px;
+            --font-title: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            --font-body: Arial, Helvetica, system-ui, sans-serif;
+        }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100svh;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /* Header sticky */
+        .header-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(17, 17, 17, .88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+            padding: .55rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: .75rem;
+        }
+        .header-sticky .brand {
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: clamp(1rem, 3.5vw, 1.25rem);
+            color: var(--text);
+            letter-spacing: -.01em;
+            white-space: nowrap;
+        }
+        .header-sticky .brand span {
+            color: var(--accent);
+        }
+        .header-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            background: var(--cta);
+            color: var(--cta-text);
+            font-weight: 700;
+            font-size: .8rem;
+            padding: .5rem 1rem;
+            border-radius: var(--radius-btn);
+            letter-spacing: .01em;
+            white-space: nowrap;
+            transition: transform .2s, box-shadow .2s;
+            flex-shrink: 0;
+        }
+        .header-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(30, 168, 83, .35);
+        }
+        .header-btn svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+        /* Hero */
+        .hero {
+            position: relative;
+            min-height: 92svh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: #000;
+        }
+        .hero video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, .20) 0%, rgba(0, 0, 0, .72) 78%);
+            z-index: 1;
+        }
+        .hero-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(17, 17, 17, .12);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 2rem 1.25rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: .9rem;
+        }
+        .badge-pill {
+            display: inline-block;
+            background: rgba(255, 255, 255, .08);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, .2);
+            color: #fff;
+            font-size: .78rem;
+            padding: .35rem 1rem;
+            border-radius: 50px;
+            letter-spacing: .03em;
+            animation: fadeUp .6s ease-out both;
+            animation-delay: 0s;
+        }
+        .hero h1 {
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: clamp(2.3rem, 9vw, 3.6rem);
+            line-height: 1.05;
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, .5);
+            animation: fadeUp .6s ease-out both;
+            animation-delay: .2s;
+            max-width: 90%;
+        }
+        .hero-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, .85);
+            animation: fadeUp .6s ease-out both;
+            animation-delay: .4s;
+            max-width: 320px;
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: var(--cta);
+            color: var(--cta-text);
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: .85rem 2.2rem;
+            border-radius: var(--radius-btn);
+            letter-spacing: .01em;
+            animation: fadeUp .6s ease-out both, pulseCTA 2.5s infinite;
+            animation-delay: .6s, .6s;
+            box-shadow: 0 4px 20px rgba(30, 168, 83, .3);
+        }
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(30, 168, 83, .45);
+        }
+        .hero-cta svg {
+            width: 22px;
+            height: 22px;
+        }
+        .hero-trust {
+            font-size: .8rem;
+            color: rgba(255, 255, 255, .7);
+            animation: fadeUp .6s ease-out both;
+            animation-delay: .8s;
+        }
+        .scroll-arrow {
+            position: absolute;
+            bottom: .8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounceDown 2s infinite;
+            opacity: .7;
+        }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes pulseCTA {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 20px rgba(30, 168, 83, .3);
+            }
+            50% {
+                transform: scale(1.04);
+                box-shadow: 0 8px 30px rgba(30, 168, 83, .5);
+            }
+        }
+        @keyframes bounceDown {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(8px);
+            }
+        }
+        /* Sections */
+        section {
+            padding: 2.5rem 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        section h2 {
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: clamp(1.5rem, 6vw, 2rem);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        section h3 {
+            font-family: var(--font-title);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: .6rem;
+            color: #fff;
+        }
+        section p {
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, .85);
+            font-size: .95rem;
+        }
+        .card {
+            background: var(--surface);
+            color: var(--text-dark);
+            border-radius: var(--radius-card);
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .25);
+        }
+        .card h3 {
+            color: #111;
+            margin-bottom: .5rem;
+        }
+        .card p {
+            color: #333;
+        }
+        .card img {
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            width: 100%;
+            aspect-ratio: 5/6;
+            object-fit: cover;
+            max-height: 45vh;
+        }
+        .grid-2 {
+            display: grid;
+            gap: 1.25rem;
+        }
+        @media(min-width:768px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+            section {
+                padding: 3rem 2rem;
+                max-width: 800px;
+            }
+            .hero-content {
+                padding: 3rem 2rem 3.5rem;
+            }
+        }
+        /* CTA inline */
+        .cta-inline {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: var(--cta);
+            color: var(--cta-text);
+            font-weight: 700;
+            font-size: .95rem;
+            padding: .7rem 1.6rem;
+            border-radius: var(--radius-btn);
+            letter-spacing: .01em;
+            transition: transform .2s, box-shadow .2s;
+            box-shadow: 0 4px 16px rgba(30, 168, 83, .25);
+        }
+        .cta-inline:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(30, 168, 83, .4);
+        }
+        .cta-inline svg {
+            width: 20px;
+            height: 20px;
+        }
+        .cta-block {
+            display: flex;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        /* Testimonials */
+        .testimonial-card {
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: var(--radius-card);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .testimonial-card .stars {
+            color: #f5c542;
+            font-size: 1rem;
+            margin-bottom: .5rem;
+        }
+        .testimonial-card p {
+            color: rgba(255, 255, 255, .9);
+            font-style: italic;
+            font-size: .9rem;
+            margin-bottom: .6rem;
+        }
+        .testimonial-card .author {
+            font-weight: 700;
+            color: #fff;
+            font-size: .85rem;
+        }
+        .testimonial-card .city {
+            color: rgba(255, 255, 255, .55);
+            font-size: .78rem;
+        }
+        /* FAQ */
+        details {
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 14px;
+            padding: 1rem 1.25rem;
+            margin-bottom: .75rem;
+            cursor: pointer;
+            transition: background .2s;
+        }
+        details[open] {
+            background: #222;
+        }
+        summary {
+            font-weight: 700;
+            font-size: .95rem;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: .5rem;
+            color: #fff;
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary::after {
+            content: '+';
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--accent);
+            transition: transform .25s;
+            flex-shrink: 0;
+        }
+        details[open] summary::after {
+            content: '−';
+            transform: rotate(180deg);
+        }
+        details .faq-answer {
+            margin-top: .6rem;
+            color: rgba(255, 255, 255, .8);
+            font-size: .88rem;
+            line-height: 1.5;
+        }
+        /* Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .6s ease-out, transform .6s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 1.25rem;
+            color: rgba(255, 255, 255, .45);
+            font-size: .78rem;
+            border-top: 1px solid rgba(255, 255, 255, .06);
+        }
+        /* Reduced motion */
+        @media(prefers-reduced-motion:reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .hero-cta {
+                animation: none;
+            }
+            .scroll-arrow {
+                animation: none;
+            }
+            * {
+                animation-duration: 0s !important;
+                transition-duration: 0s !important;
+            }
+        }
+    </style>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-55TQ628G');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11495571750"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11495571750');</script>
+<style id="wa-reveal-guard">@media (prefers-reduced-motion:reduce){.reveal,.reveal-stagger>*,[data-reveal],[data-aos]{opacity:1!important;transform:none!important}}</style><noscript id="wa-reveal-guard-ns"><style>.reveal,.reveal-stagger>*,[data-reveal],[data-aos]{opacity:1!important;transform:none!important}</style></noscript>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%236d28d9'/><text x='32' y='44' font-size='34' text-anchor='middle'>🔮</text></svg>">
+</head>
+<body>
+<script id="wa-slider-guard">(function(){if(window.__waSliderGuard)return;window.__waSliderGuard=1;var o=Element.prototype.scrollIntoView;Element.prototype.scrollIntoView=function(){var c=this.parentElement;while(c&&c!==document.body&&!(c.scrollWidth>c.clientWidth+8))c=c.parentElement;if(c&&c!==document.body){var cr=c.getBoundingClientRect(),er=this.getBoundingClientRect();c.scrollTo({left:c.scrollLeft+(er.left-cr.left)-(cr.width-er.width)/2,behavior:'smooth'});return}return o.apply(this,arguments)};})();</script>
+<script id="wa-touch-guard">(function(){if(window.__waTouchGuard)return;window.__waTouchGuard=1;var o=EventTarget.prototype.addEventListener;EventTarget.prototype.addEventListener=function(t,f,x){if(t==='touchmove'||t==='touchstart'){var p=(typeof x==='object'&&x)?x:{capture:x===true};if(p.passive!==true)x={capture:!!p.capture,once:!!p.once,passive:true};}return o.call(this,t,f,x);};addEventListener('DOMContentLoaded',function(){try{var els=document.body.querySelectorAll('*');for(var i=0;i<els.length;i++){var c=getComputedStyle(els[i]).touchAction;if(c==='none'||c==='pan-x'){els[i].style.touchAction='pan-x pan-y pinch-zoom';}}}catch(e){}});})();</script>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55TQ628G" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <header class="header-sticky">
+        <div class="brand">Maestro <span>Amado</span></div>
+        <a href="https://wa.me/12344525514?text=Hola%20Maestro%20Amado%2C%20quiero%20mi%20consulta%20gratis%20sobre%20brujos%20en%20Nicaragua" class="header-btn" aria-label="WhatsApp Maestro Amado">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+        </a>
+    </header>
+    <main>
+        <!-- HERO -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <video autoplay muted loop playsinline preload="metadata" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='960' viewBox='0 0 800 960'%3E%3Crect fill='%23111' width='800' height='960'/%3E%3C/svg%3E">
+                <source src="https://googleads.mkinnovador.com/banco/videos/ritual-de-amor-con-velas-de-pareja.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="badge-pill">✦ Brujos en Nicaragua &mdash; Maestro disponible ahora</span>
+                <h1 id="hero-heading">Brujos en Nicaragua &mdash; Sabiduría Ancestral del Maestro Amado</h1>
+                <p class="hero-subtitle">¿Cuántas noches llevas mirando el teléfono esperando su mensaje? Hay saberes antiguos para lo que te pasa.</p>
+                <a href="https://wa.me/12344525514?text=Hola%20Maestro%20Amado%2C%20quiero%20mi%20consulta%20gratis%20sobre%20brujos%20en%20Nicaragua" class="hero-cta">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Consulta Gratis por WhatsApp
+                </a>
+                <span class="hero-trust">⭐ 4.9 &middot; +5.000 consultas &middot; Respuesta inmediata</span>
+            </div>
+            <svg class="scroll-arrow" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="white" stroke-width="1.5" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </section>
+
+        <!-- Alta Brujería Poderosa -->
+        <section class="reveal" aria-labelledby="alta-brujeria">
+            <h2 id="alta-brujeria">Alta Brujería Poderosa &mdash; Brujos en Nicaragua con Linaje</h2>
+            <p>Esto que hoy hago me lo enseñó mi abuela, y a ella la suya, allá en las tierras cálidas de Nicaragua. No lo aprendí en libros ni en internet: crecí entre veladoras, hierbas de monte y oraciones que se transmiten en voz baja de generación en generación. Si buscas <strong>brujos en Nicaragua</strong> que conozcan el arte de verdad, has llegado al lugar correcto.</p>
+            <p>Cuénteme su aflicción; hay saberes antiguos para lo que le pasa. La naturaleza sabe unir lo que el orgullo separa. Con hierbas y velas consagradas, obramos para que el amor florezca sin forzar la voluntad.</p>
+            <div class="cta-block">
+                <a href="https://wa.me/12344525514?text=Hola%20Maestro%20Amado%2C%20necesito%20alta%20brujer%C3%ADa%20poderosa%20para%20mi%20caso" class="cta-inline">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Escríbele al Maestro Amado
+                </a>
+            </div>
+        </section>
+
+        <!-- Magia Blanca de Atracción -->
+        <section class="reveal" aria-labelledby="magia-blanca">
+            <h2 id="magia-blanca">Magia Blanca de Atracción &mdash; Sin Forzar la Voluntad</h2>
+            <div class="card">
+                
+                <h3>El amor verdadero no se impone: se llama</h3>
+                <p>Con velas consagradas, miel y especias que preparo según la tradición de mi linaje nicaragüense, obramos para que esa persona sienta el llamado del alma. Sin presión, sin daño: solo la energía limpia de la tierra que despierta lo que el orgullo dormía.</p>
+            </div>
+            <p>Muchos <strong>brujos en Nicaragua</strong> prometen dominación; yo te ofrezco atracción pura. La diferencia está en el oficio y en el respeto por las fuerzas que nos rodean.</p>
+        </section>
+
+        <!-- Amarres de Amor Caseros -->
+        <section class="reveal" aria-labelledby="amarres-caseros">
+            <h2 id="amarres-caseros">Amarres de Amor Caseros &mdash; Rituales que Vienen del Rancho</h2>
+            <div class="card">
+                
+                <h3>Sencillos ante el ojo humano, profundos en el espíritu</h3>
+                <p>Rituales que mi abuela preparaba en la cocina de su rancho en Nicaragua. Con lo que había: una vela, un cordón, un poco de miel y la oración correcta. Esa es la esencia de los amarres de amor caseros que aún hoy realizo para que piense en usted y le escriba.</p>
+            </div>
+        </section>
+
+        <!-- Protección y Limpieza -->
+        <section class="reveal" aria-labelledby="proteccion-limpieza">
+            <h2 id="proteccion-limpieza">Protección y Limpieza &mdash; Antes de Amarrar, Hay que Desatar</h2>
+            <p>Quito malas energías, envidias y rivales con la fuerza de la tierra. El camino se limpia para que el amor entre sin tropiezos. Si sientes que todo se te cierra, que hay algo que no te deja avanzar, probablemente necesitas una limpieza profunda antes de cualquier amarre.</p>
+            <div class="card">
+                
+                <h3>Desatar para después unir</h3>
+                <p>Como <strong>brujos en Nicaragua</strong> sabemos que no se puede sembrar en tierra envenenada. Primero limpio tu campo energético, retiro lo que estorba, y luego el amarre florece sin resistencia.</p>
+            </div>
+            <div class="cta-block">
+                <a href="https://wa.me/12344525514?text=Hola%20Maestro%20Amado%2C%20necesito%20una%20limpieza%20espiritual%20urgente" class="cta-inline">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Pide tu limpieza gratuita
+                </a>
+            </div>
+        </section>
+
+        <!-- Tarot Profesional -->
+        <section class="reveal" aria-labelledby="tarot-profesional">
+            <h2 id="tarot-profesional">Tarot Profesional &mdash; Revelación de Destino</h2>
+            <div class="card">
+                
+                <h3>Las cartas no mienten, hijo</h3>
+                <p>Antes de cualquier trabajo, el tarot me revela lo que el corazón calla y lo que el destino tiene escrito. Con esa guía, el amarre se hace certero y sin daño alguno. Entre <strong>brujos en Nicaragua</strong>, el que no consulta las cartas primero camina a ciegas.</p>
+            </div>
+        </section>
+
+        <!-- Sobre el Maestro Amado -->
+        <section class="reveal" aria-labelledby="sobre-maestro">
+            <h2 id="sobre-maestro">Maestro Amado &mdash; Brujos en Nicaragua de Linaje Ancestral</h2>
+            <div class="card">
+                
+                <h3>El arte que heredé de mi abuela, y ella de la suya</h3>
+                <p>Tengo más de 35 años de práctica en este camino. Nací y crecí en Nicaragua, entre veladoras, hierbas de monte y oraciones que se transmiten en voz baja. No prometo milagros: prometo oficio, respeto por las fuerzas que nos rodean y una voluntad inquebrantable de ayudarte.</p>
+                <p>He forjado mi reputación ayudando a cientos de almas a conquistar sus deseos amorosos, su éxito profesional y su poder personal. Donde otros <strong>brujos en Nicaragua</strong> fracasan, yo triunfo —no por vanidad, sino porque sé escuchar lo que el espíritu me dicta. Cada caso es único; cada corazón, un mundo.</p>
+            </div>
+            <div class="cta-block">
+                <a href="https://wa.me/12344525514?text=Hola%20Maestro%20Amado%2C%20quiero%20contarte%20mi%20caso%20personalmente" class="cta-inline">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Cuéntame tu caso, te leo personalmente
+                </a>
+            </div>
+        </section>
+
+        <!-- Servicios -->
+        <section class="reveal" aria-labelledby="servicios">
+            <h2 id="servicios">Servicios del Maestro Amado &mdash; Brujos en Nicaragua</h2>
+            <div class="grid-2">
+                <div class="card">
+                    
+                    <h3>Amarres de Amor Caseros</h3>
+                    <p>Rituales con velas, miel y especias según la tradición de mi linaje nicaragüense. Para atraer al ser querido sin importar edad, sexo, tiempo ni distancia.</p>
+                </div>
+                <div class="card">
+                    
+                    <h3>Amarres de Amor Caseros y Efectivos</h3>
+                    <p>Cuando el amor se enfría, una vela bien puesta y una oración bien rezada pueden más que mil palabras. Probados donde otros han fallado.</p>
+                </div>
+                <div class="card">
+                    
+                    <h3>Amarres Caseros para que Piense en Mí y me Escriba</h3>
+                    <p>Con un sencillo altar y la energía del maestro, esa persona sentirá la necesidad de buscarte y comunicarse. Sin presión, sin daño: solo el llamado del alma.</p>
+                </div>
+                <div class="card">
+                    
+                    <h3>Protección y Limpieza Espiritual</h3>
+                    <p>Antes de amarrar, hay que desatar. Retiro malas energías, envidias y rivales con la fuerza de la tierra para que el amor entre sin tropiezos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cómo Trabaja el Maestro Amado -->
+        <section class="reveal" aria-labelledby="como-trabaja">
+            <h2 id="como-trabaja">¿Cómo Trabaja el Maestro Amado?</h2>
+            <div class="card">
+                <h3>1. Consulta previa</h3>
+                <p>Analizo tu caso con detenimiento. No hay prisa: el amor verdadero sabe esperar. Determino qué tipo de trabajo necesitas según lo que el tarot y mi intuición me dictan.</p>
+            </div>
+            <div class="card">
+                <h3>2. Elección del ritual</h3>
+                <p>Seleccionamos juntos el amarre de amor casero adecuado. Cada caso es distinto: endulzamiento, vela de dominación suave o ritual de retorno.</p>
+            </div>
+            <div class="card">
+                <h3>3. Ejecución con fe</h3>
+                <p>Realizo el trabajo con la energía canalizada y el convencimiento pleno. La tierra y el fuego obran cuando quien los invoca sabe lo que hace.</p>
+            </div>
+            <div class="card">
+                <h3>4. Seguimiento</h3>
+                <p>No te abandono a mitad del camino. Hago seguimiento de tu caso y ajusto el trabajo si es preciso. Tú no estás solo.</p>
+            </div>
+        </section>
+
+        <!-- Garantía -->
+        <section class="reveal" aria-labelledby="garantia">
+            <h2 id="garantia">Pagas al Ver Resultados &mdash; Garantía del Maestro Amado</h2>
+            <div class="card">
+                
+                <h3>Primero trabajo, después pagas</h3>
+                <p>Como medida de garantía, tú solo pagas cuando veas resultados en tu trabajo. Así de sencillo, así de justo. La confianza no se compra: se gana con hechos. Pocos <strong>brujos en Nicaragua</strong> se atreven a ofrecer esta garantía; yo puedo porque sé lo que hago.</p>
+            </div>
+            <div class="cta-block">
+                <a href="https://wa.me/12344525514?text=Hola%20Maestro%20Amado%2C%20hablemos%20de%20mi%20caso%20sin%20compromiso" class="cta-inline">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Hablemos de tu caso
+                </a>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="reveal" aria-labelledby="testimonios">
+            <h2 id="testimonios">Lo que Dicen Quienes Ya Volvieron a Sonreír</h2>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"La verdad yo no creía en estas cosas, pero un amarre de amor casero que me preparó el Maestro Amado cambió todo. A los 8 días mi ex me escribió pidiendo verme. Llevábamos siete meses sin hablarnos. Se lo juro que aún no me lo explico, pero funcionó."</p>
+                <div class="author">Yolanda R.</div>
+                <div class="city">Houston, TX</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Intenté de todo: psicólogo, retiros, hasta otro brujo que me dejó igual. El Maestro Amado me escuchó sin prisa, me explicó el ritual con velas y en menos de dos semanas mi pareja volvió a casa. Ahora hasta me ayuda con la limpieza espiritual cada mes."</p>
+                <div class="author">Héctor Navarro</div>
+                <div class="city">Phoenix, AZ</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Estaba desesperado; mi mujer se había ido con otro y no contestaba mis mensajes. El maestro me hizo un amarre casero para que pensara en mí y me escribiera. A los cinco días exactos recibí un 'hola, ¿cómo estás?' que me devolvió la vida."</p>
+                <div class="author">Ramón C.</div>
+                <div class="city">Charlotte, NC</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Soy escéptico por naturaleza, pero este señor tiene una paz y una sabiduría que inspiran confianza. El amarre de amor que me hizo fue efectivo y, lo mejor, no sentí presión ni miedo en ningún momento. Recomiendo su consulta gratuita sin dudar."</p>
+                <div class="author">Leonardo Fuentes</div>
+                <div class="city">Newark, NJ</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"¡Funcionó! Llevaba un año con una depresión horrible por una ruptura. Encontré al Maestro Amado buscando <strong>brujos en Nicaragua</strong> y, aunque tenía mil dudas, me animé. Hoy estoy de nuevo con mi novio y hasta estamos planeando boda. Bendiciones para este hombre."</p>
+                <div class="author">Carmen Alicia</div>
+                <div class="city">Fresno, CA</div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="reveal" aria-labelledby="faq">
+            <h2 id="faq">Preguntas Frecuentes sobre Brujos en Nicaragua</h2>
+            <details>
+                <summary>¿Qué son exactamente los amarres de amor caseros?</summary>
+                <div class="faq-answer">Son rituales que emplean elementos simples —velas, miel, especias, cordones— preparados según recetas transmitidas de generación en generación. No requieren grandes altares: la fuerza está en la intención y en el conocimiento de quien los ejecuta. El Maestro Amado los realiza a distancia con la misma eficacia que si estuviera en persona.</div>
+            </details>
+            <details>
+                <summary>¿Los brujos en Nicaragua como el Maestro Amado pueden fallar?</summary>
+                <div class="faq-answer">Cuando el trabajo se hace con oficio y respeto por las fuerzas naturales, el margen de fallo es mínimo. Pero el amor es libre, y forzarlo con violencia espiritual nunca es el camino. Por eso el Maestro Amado siempre consulta el tarot primero: si la unión no conviene al alma, él te lo dirá con honestidad.</div>
+            </details>
+            <details>
+                <summary>¿Cómo son los amarres caseros para que piense en mí y me escriba?</summary>
+                <div class="faq-answer">Se prepara un altar sencillo con elementos consagrados y se canaliza la energía del maestro hacia la persona deseada. Sin presión ni daño, la persona siente la necesidad de buscarte y comunicarse. Es un llamado del alma, no una imposición.</div>
+            </details>
+            <details>
+                <summary>¿El Maestro Amado atiende solo en Nicaragua o también en Estados Unidos?</summary>
+                <div class="faq-answer">El Maestro Amado atiende a distancia a personas en Estados Unidos y todo el mundo hispano. La energía no conoce fronteras. Sus rituales son igual de efectivos sin importar dónde te encuentres, y la consulta es siempre por WhatsApp en total privacidad.</div>
+            </details>
+            <details>
+                <summary>¿Cuánto tardan en verse los resultados de un amarre?</summary>
+                <div class="faq-answer">Cada caso es único. Algunas personas notan cambios en días; otras necesitan más tiempo. Lo importante es que el Maestro Amado hace seguimiento y ajusta el trabajo si es preciso. No te abandona a mitad del camino.</div>
+            </details>
+            <details>
+                <summary>¿Es seguro consultar brujos en Nicaragua por WhatsApp?</summary>
+                <div class="faq-answer">Totalmente. La consulta es privada y sin compromiso. El Maestro Amado te escucha, analiza tu caso con el tarot y te orienta con honestidad. Si decides no continuar, no hay presión alguna. Tu privacidad está garantizada.</div>
+            </details>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="reveal" style="text-align:center;" aria-labelledby="cta-final">
+            <h2 id="cta-final">Escríbele al Maestro Amado — Consulta Gratis</h2>
+            <p style="margin-bottom:1.5rem;">El santero no cobra por escuchar tu caso. Con mi altar y mis herramientas esotéricas, te revelaré lo que las cartas y los espíritus me dicen. La consulta es sin compromiso y en total privacidad.</p>
+            <a href="https://wa.me/12344525514?text=Hola%20Maestro%20Amado%2C%20solicito%20mi%20consulta%20gratis%20sobre%20brujos%20en%20Nicaragua" class="cta-inline" style="font-size:1.1rem;padding:.9rem 2.4rem;">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Solicitar Consulta Gratis
+            </a>
+            <p style="margin-top:1rem;font-size:.82rem;color:rgba(255,255,255,.55);">Seguimiento a tu caso &middot; Acceso directo al maestro por WhatsApp</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Maestro Amado &mdash; Brujos en Nicaragua de Linaje Ancestral &mdash; Consulta Gratis 24/7</p>
+        <p style="margin-top:.4rem;">Contacto solo por WhatsApp: 12344525514</p>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+                "@type": "Question",
+                "name": "¿Qué son exactamente los amarres de amor caseros?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Son rituales que emplean elementos simples —velas, miel, especias, cordones— preparados según recetas transmitidas de generación en generación. El Maestro Amado los realiza a distancia con la misma eficacia."
+                }
+            }, {
+                "@type": "Question",
+                "name": "¿Los brujos en Nicaragua como el Maestro Amado pueden fallar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Cuando el trabajo se hace con oficio y respeto, el margen de fallo es mínimo. El Maestro Amado consulta el tarot primero y te dice con honestidad si la unión conviene."
+                }
+            }, {
+                "@type": "Question",
+                "name": "¿Cómo son los amarres caseros para que piense en mí y me escriba?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Se prepara un altar sencillo y se canaliza la energía hacia la persona deseada, que siente la necesidad de buscarte sin presión ni daño."
+                }
+            }, {
+                "@type": "Question",
+                "name": "¿El Maestro Amado atiende solo en Nicaragua o también en Estados Unidos?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Atiende a distancia a personas en Estados Unidos y todo el mundo hispano. La energía no conoce fronteras y la consulta es por WhatsApp."
+                }
+            }, {
+                "@type": "Question",
+                "name": "¿Cuánto tardan en verse los resultados de un amarre?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Cada caso es único. Algunas personas notan cambios en días; otras necesitan más tiempo. El Maestro Amado hace seguimiento y ajusta el trabajo."
+                }
+            }, {
+                "@type": "Question",
+                "name": "¿Es seguro consultar brujos en Nicaragua por WhatsApp?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Totalmente. La consulta es privada y sin compromiso. El Maestro Amado te escucha con honestidad y tu privacidad está garantizada."
+                }
+            }]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Brujos en Nicaragua — Maestro Amado",
+            "description": "Amarres de amor caseros y efectivos, limpieza espiritual, tarot profesional y consulta gratis por WhatsApp. Linaje ancestral nicaragüense.",
+            "provider": {
+                "@type": "Person",
+                "name": "Maestro Amado",
+                "description": "Maestro espiritual con más de 35 años de práctica, heredero de un linaje ancestral de brujos en Nicaragua."
+            },
+            "areaServed": {
+                "@type": "Place",
+                "name": "Nicaragua y Estados Unidos"
+            },
+            "availableChannel": {
+                "@type": "ServiceChannel",
+                "serviceUrl": "https://wa.me/12344525514"
+            }
+        }
+    </script>
+
+    <script>
+        (function() {
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            const reveals = document.querySelectorAll('.reveal');
+            if (reducedMotion.matches) {
+                reveals.forEach(el => el.classList.add('visible'));
+                return;
+            }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.18, rootMargin: '0px 0px -30px 0px' });
+            reveals.forEach((el, i) => {
+                el.style.transitionDelay = (i % 3) * 0.05 + 's';
+                observer.observe(el);
+            });
+            reducedMotion.addEventListener('change', (e) => {
+                if (e.matches) {
+                    reveals.forEach(el => { el.classList.add('visible');
+                        el.style.transitionDelay = '0s'; });
+                    observer.disconnect();
+                }
+            });
+        })();
+    </script>
+<script src="https://googleads.mkinnovador.com/wa-tracker.js" defer></script>
+<script id="wa-maq-loader">(function(){if(/[?&](maquetador|mq)\b/.test(location.search)&&!window.__waMaq){var s=document.createElement('script');s.src='https://googleads.mkinnovador.com/maquetador.js?v=1';s.defer=true;(document.head||document.documentElement).appendChild(s);}})();</script>
+<script id="wa-reveal-guard-js">(function(){var fixed=false;function hid(){var o=[],a=document.querySelectorAll('[class],[data-reveal],[data-aos]');for(var i=0;i<a.length;i++){var e=a[i];if(e.closest&&e.closest('#maq-host'))continue;var c;try{c=getComputedStyle(e)}catch(x){continue}if(!c||c.display==='none'||c.visibility==='hidden')continue;if(c.position==='fixed')continue;if(e.getAttribute('aria-hidden')==='true')continue;if(parseFloat(c.opacity||'1')>0.05)continue;if(!(e.textContent||'').replace(/\s+/g,''))continue;o.push(e)}return o}function inView(e){var r=e.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight&&r.height>0}function fixAll(){if(fixed)return;fixed=true;var els=hid();for(var i=0;i<els.length;i++){var e=els[i];e.classList.add('visible');e.style.setProperty('opacity','1','important');e.style.setProperty('transform','none','important')}var st=document.querySelectorAll('.reveal,.reveal-stagger');for(var j=0;j<st.length;j++)st[j].classList.add('visible')}function check(){if(fixed)return;var els=hid();for(var i=0;i<els.length;i++){if(inView(els[i])){fixAll();return}}}setTimeout(check,1600);setTimeout(check,3500);var t=0;addEventListener('scroll',function(){if(fixed)return;var n=Date.now();if(n-t<400)return;t=n;setTimeout(check,250)},{passive:true})})();</script>
+<!--WA-FAB:luna-plateada--><div class="wfab-luna"><style>
+.wfab-luna{position:fixed;right:16px;bottom:16px;z-index:99999}
+.wfab-luna a{display:flex;align-items:center;gap:10px;padding:9px 16px 9px 9px;border-radius:999px;background:linear-gradient(135deg,#1e1b4b,#312e81 60%,#1e1b4b);border:1px solid rgba(203,213,225,.55);color:#e2e8f0;font:600 13.5px/1.1 'Segoe UI',sans-serif;text-decoration:none;box-shadow:0 8px 24px rgba(30,27,75,.55);position:relative;overflow:hidden;animation:wfabLunaFloat 6s ease-in-out infinite}
+.wfab-luna a::before,.wfab-luna a::after{content:'✦';position:absolute;color:rgba(226,232,240,.8);font-size:9px;animation:wfabLunaTwinkle 4s ease-in-out infinite}
+.wfab-luna a::before{top:6px;right:18px}
+.wfab-luna a::after{bottom:7px;right:44px;animation-delay:2s}
+.wfab-luna .wi{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#19c15f;color:#fff;flex:0 0 auto}
+@keyframes wfabLunaFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes wfabLunaTwinkle{0%,100%{opacity:.15}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.wfab-luna a,.wfab-luna a::before,.wfab-luna a::after{animation:none!important}}
+</style><a href="https://wa.me/12344525514?text=Hola%20Maestro%20Amado%2C%20quiero%20mi%20consulta%20gratis%20sobre%20brujos%20en%20Nicaragua" target="_blank" rel="noopener" aria-label="Chatea por WhatsApp"><span class="wi"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span><span>Escríbeme ahora 🌙</span></a></div><!--/WA-FAB-->
+<script id="kz-video-io">(function(){var vs=[].slice.call(document.querySelectorAll('video'));if(!vs.length)return;vs.forEach(function(v){v.muted=true;v.defaultMuted=true;v.playsInline=true;v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','');v.removeAttribute('controls');});function tryPlay(v){var p=v.play();if(p&&p.catch)p.catch(function(){});}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&e.intersectionRatio>=0.4){tryPlay(e.target);}else{e.target.pause();}});},{threshold:[0,0.4,1]});vs.forEach(function(v){io.observe(v);});function kick(){vs.forEach(function(v){var r=v.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){if(v.readyState===0){try{v.load();}catch(err){}}tryPlay(v);}});}['touchstart','click','scroll'].forEach(function(ev){addEventListener(ev,function h(){kick();removeEventListener(ev,h);},{passive:true});});setTimeout(kick,400);})();</script>
+</body>
+</html>
