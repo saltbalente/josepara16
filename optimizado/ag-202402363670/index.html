@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brujos consulta gratis con el Maestro Nazario. Primera consulta espiritual sin costo por WhatsApp 24/7. Sabiduría ancestral nicaragüense. Respuesta inmediata.">
+    <title>Brujos Consulta Gratis | Maestro Nazario | Consulta Espiritual 24/7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #111111;
+            --surface: #ffffff;
+            --text: #ffffff;
+            --text-dark: #1a1a1a;
+            --cta: #1ea853;
+            --cta-hover: #168a40;
+            --accent: #111111;
+            --radius-card: 20px;
+            --radius-btn: 50px;
+            --font-title: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            --font-body: Arial, Helvetica, system-ui, sans-serif;
+            --max-w: 480px;
+        }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100svh;
+        }
+        main {
+            width: 100%;
+            max-width: var(--max-w);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @media(min-width:768px) {
+            :root {
+                --max-w: 720px;
+            }
+        }
+        @media(min-width:1024px) {
+            :root {
+                --max-w: 900px;
+            }
+        }
+
+        /* Header sticky */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+            max-width: var(--max-w);
+            background: rgba(17, 17, 17, .88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 16px;
+            min-height: 52px;
+        }
+        .sticky-header .brand {
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 1rem;
+            color: #fff;
+            letter-spacing: .3px;
+            white-space: nowrap;
+        }
+        .sticky-header .brand span {
+            color: var(--cta);
+        }
+        .sticky-header .btn-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--cta);
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: var(--radius-btn);
+            font-weight: 700;
+            font-size: .82rem;
+            letter-spacing: .2px;
+            white-space: nowrap;
+            transition: background .2s, transform .15s;
+        }
+        .sticky-header .btn-header:hover {
+            background: var(--cta-hover);
+            transform: translateY(-1px);
+        }
+        .sticky-header .btn-header svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            min-height: 92svh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .hero video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .hero .overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(180deg, rgba(0, 0, 0, .18) 0%, rgba(0, 0, 0, .72) 78%);
+        }
+        .hero .overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(17, 17, 17, .12);
+        }
+        .hero .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 32px 20px 40px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+        }
+        .hero .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, .1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, .2);
+            border-radius: 30px;
+            padding: 7px 18px;
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .6px;
+            color: #fff;
+        }
+        .hero h1 {
+            font-family: var(--font-title);
+            font-size: clamp(2.2rem, 9vw, 3.4rem);
+            font-weight: 800;
+            line-height: 1.05;
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, .5);
+            max-width: 95%;
+        }
+        .hero .subtitle {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, .88);
+            max-width: 88%;
+            line-height: 1.4;
+        }
+        .hero .cta-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--cta);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 32px;
+            border-radius: var(--radius-btn);
+            font-weight: 700;
+            font-size: 1.08rem;
+            letter-spacing: .3px;
+            animation: pulseCta 2.5s infinite ease-in-out;
+            transition: background .2s;
+            box-shadow: 0 0 28px rgba(30, 168, 83, .35);
+        }
+        .hero .cta-hero:hover {
+            background: var(--cta-hover);
+        }
+        .hero .trust {
+            font-size: .82rem;
+            color: rgba(255, 255, 255, .7);
+            letter-spacing: .4px;
+        }
+        .hero .scroll-arrow {
+            margin-top: 2px;
+            opacity: .7;
+            animation: bounceArrow 2s infinite;
+        }
+        @keyframes pulseCta {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 28px rgba(30, 168, 83, .35);
+            }
+            50% {
+                transform: scale(1.035);
+                box-shadow: 0 0 44px rgba(30, 168, 83, .5);
+            }
+        }
+        @keyframes bounceArrow {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(8px);
+            }
+        }
+
+        /* Sections */
+        section {
+            width: 100%;
+            padding: 40px 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        section h2 {
+            font-family: var(--font-title);
+            font-size: clamp(1.5rem, 5vw, 1.9rem);
+            font-weight: 700;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 10px;
+            line-height: 1.2;
+            max-width: 92%;
+        }
+        section .section-subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, .7);
+            font-size: .92rem;
+            margin-bottom: 24px;
+            max-width: 88%;
+            line-height: 1.45;
+        }
+        section p {
+            max-width: 92%;
+            text-align: center;
+            color: rgba(255, 255, 255, .82);
+            margin-bottom: 14px;
+            line-height: 1.55;
+            font-size: .94rem;
+        }
+        section .section-img {
+            width: 78%;
+            max-width: 340px;
+            aspect-ratio: 5/6;
+            object-fit: cover;
+            border-radius: var(--radius-card);
+            margin: 16px auto;
+            display: block;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, .4);
+        }
+
+        /* Cards */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+            max-width: 92%;
+            margin-top: 8px;
+        }
+        @media(min-width:768px) {
+            .card-grid {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 18px;
+            }
+            .card-grid>* {
+                flex: 1 1 260px;
+                max-width: 320px;
+            }
+        }
+        .card {
+            background: var(--surface);
+            color: var(--text-dark);
+            border-radius: var(--radius-card);
+            padding: 22px 18px;
+            text-align: center;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, .3);
+            transition: transform .2s, box-shadow .2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, .45);
+        }
+        .card h3 {
+            font-family: var(--font-title);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #111;
+            line-height: 1.25;
+        }
+        .card p {
+            color: #444;
+            font-size: .88rem;
+            text-align: center;
+            max-width: 100%;
+            margin: 0;
+        }
+        .card .card-img {
+            width: 70%;
+            max-width: 200px;
+            aspect-ratio: 5/6;
+            object-fit: cover;
+            border-radius: 14px;
+            margin: 0 auto;
+        }
+        .card .btn-card {
+            display: inline-block;
+            background: var(--cta);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: var(--radius-btn);
+            font-weight: 700;
+            font-size: .85rem;
+            margin-top: 4px;
+            transition: background .2s;
+        }
+        .card .btn-card:hover {
+            background: var(--cta-hover);
+        }
+
+        /* CTA inline */
+        .cta-inline {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--cta);
+            color: #fff;
+            text-decoration: none;
+            padding: 13px 26px;
+            border-radius: var(--radius-btn);
+            font-weight: 700;
+            font-size: .96rem;
+            margin: 12px 0;
+            transition: background .2s, transform .15s;
+        }
+        .cta-inline:hover {
+            background: var(--cta-hover);
+            transform: translateY(-2px);
+        }
+        .cta-inline svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        /* Video container */
+        .video-vertical {
+            max-width: 380px;
+            width: 85%;
+            aspect-ratio: 9/16;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            margin: 12px auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .5);
+            background: #000;
+        }
+        .video-vertical video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: var(--surface);
+            color: var(--text-dark);
+            border-radius: var(--radius-card);
+            padding: 20px 18px;
+            text-align: left;
+            box-shadow: 0 2px 14px rgba(0, 0, 0, .3);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .testimonial-card .stars {
+            color: #f5a623;
+            font-size: .9rem;
+            letter-spacing: 2px;
+        }
+        .testimonial-card .quote {
+            font-style: italic;
+            color: #333;
+            font-size: .9rem;
+            line-height: 1.5;
+        }
+        .testimonial-card .author {
+            font-weight: 700;
+            color: #111;
+            font-size: .85rem;
+        }
+        .testimonial-card .city {
+            color: #777;
+            font-size: .78rem;
+        }
+
+        /* FAQ */
+        .faq-wrapper {
+            width: 100%;
+            max-width: 92%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        details {
+            background: var(--surface);
+            color: var(--text-dark);
+            border-radius: 14px;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 1px 8px rgba(0, 0, 0, .25);
+        }
+        details summary {
+            padding: 16px 18px;
+            font-weight: 700;
+            font-size: .93rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            color: #111;
+            user-select: none;
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        details summary .arrow {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            transition: transform .3s;
+            color: #555;
+            stroke: currentColor;
+            stroke-width: 2;
+        }
+        details[open] summary .arrow {
+            transform: rotate(180deg);
+        }
+        details .faq-answer {
+            padding: 0 18px 16px;
+            font-size: .86rem;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer-section {
+            width: 100%;
+            text-align: center;
+            padding: 32px 18px;
+            color: rgba(255, 255, 255, .5);
+            font-size: .76rem;
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            margin-top: 16px;
+        }
+        .footer-section a {
+            color: rgba(255, 255, 255, .6);
+            text-decoration: underline;
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .6s ease-out, transform .6s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media(prefers-reduced-motion:reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .hero .cta-hero {
+                animation: none;
+            }
+            .hero .scroll-arrow {
+                animation: none;
+            }
+            * {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-55TQ628G');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11495571750"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11495571750');gtag('config','AW-11034559801');gtag('config','AW-682101450');gtag('config','AW-16586320392');gtag('config','AW-16892054054');gtag('config','AW-16568918455');</script>
+<style id="wa-reveal-guard">@media (prefers-reduced-motion:reduce){.reveal,.reveal-stagger>*,[data-reveal],[data-aos]{opacity:1!important;transform:none!important}}</style><noscript id="wa-reveal-guard-ns"><style>.reveal,.reveal-stagger>*,[data-reveal],[data-aos]{opacity:1!important;transform:none!important}</style></noscript>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%236d28d9'/><text x='32' y='44' font-size='34' text-anchor='middle'>🔮</text></svg>">
+</head>
+<body>
+<script id="wa-slider-guard">(function(){if(window.__waSliderGuard)return;window.__waSliderGuard=1;var o=Element.prototype.scrollIntoView;Element.prototype.scrollIntoView=function(){var c=this.parentElement;while(c&&c!==document.body&&!(c.scrollWidth>c.clientWidth+8))c=c.parentElement;if(c&&c!==document.body){var cr=c.getBoundingClientRect(),er=this.getBoundingClientRect();c.scrollTo({left:c.scrollLeft+(er.left-cr.left)-(cr.width-er.width)/2,behavior:'smooth'});return}return o.apply(this,arguments)};})();</script>
+<script id="wa-touch-guard">(function(){if(window.__waTouchGuard)return;window.__waTouchGuard=1;var o=EventTarget.prototype.addEventListener;EventTarget.prototype.addEventListener=function(t,f,x){if(t==='touchmove'||t==='touchstart'){var p=(typeof x==='object'&&x)?x:{capture:x===true};if(p.passive!==true)x={capture:!!p.capture,once:!!p.once,passive:true};}return o.call(this,t,f,x);};addEventListener('DOMContentLoaded',function(){try{var els=document.body.querySelectorAll('*');for(var i=0;i<els.length;i++){var c=getComputedStyle(els[i]).touchAction;if(c==='none'||c==='pan-x'){els[i].style.touchAction='pan-x pan-y pinch-zoom';}}}catch(e){}});})();</script>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55TQ628G" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <header class="sticky-header" aria-label="Cabecera fija">
+        <span class="brand">Maestro <span>Nazario</span></span>
+        <a href="https://wa.me/12344525514?text=Hola%20Maestro%20Nazario%2C%20quiero%20mi%20consulta%20gratis%20%E2%9C%A8" class="btn-header" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+        </a>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" aria-label="Presentación principal">
+            <video autoplay muted loop playsinline preload="metadata"
+            poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='390' height='693' fill='%23111'%3E%3Crect width='390' height='693'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23333' font-family='serif' font-size='20'%3E🔮%3C/text%3E%3C/svg%3E">
+            <source src="https://googleads.mkinnovador.com/banco/videos/ritual-de-amor-con-velas-de-pareja.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <span class="badge reveal">✦ Maestro disponible ahora</span>
+            <h1 class="reveal" style="transition-delay:.15s;">Brujos Consulta Gratis<br>Maestro Nazario 24/7</h1>
+            <p class="subtitle reveal" style="transition-delay:.3s;">¿Cuántas noches llevas mirando el teléfono esperando su mensaje? Hay saberes antiguos para lo que te pasa.</p>
+            <a href="https://wa.me/12344525514?text=Hola%20Maestro%20Nazario%2C%20quiero%20mi%20consulta%20gratis%20%E2%9C%A8" class="cta-hero reveal" style="transition-delay:.45s;" aria-label="Consulta gratis por WhatsApp">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Consulta Gratis por WhatsApp
+            </a>
+            <span class="trust reveal" style="transition-delay:.55s;">⭐ 4.9 · +5.000 consultas · Respuesta inmediata</span>
+            <svg class="scroll-arrow reveal" style="transition-delay:.65s;" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+    </section>
+
+    <!-- ALTA BRUJERÍA PODEROSA -->
+    <section class="reveal" aria-labelledby="s1-title">
+        <h2 id="s1-title">Alta Brujería Poderosa — Brujos Consulta Gratis con Linaje</h2>
+        <p class="section-subtitle">Esto que hoy hago me lo enseñó mi abuela, y a ella la suya, allá en las tierras cálidas de Nicaragua. No lo aprendí en libros ni en internet: crecí entre veladoras, hierbas de monte y oraciones que se transmiten en voz baja de generación en generación.</p>
+        
+        <p>Si buscas <strong>brujos consulta gratis</strong> que conozcan el arte de verdad, has llegado al lugar correcto. Cuénteme su aflicción; hay saberes antiguos para lo que le pasa. La naturaleza sabe unir lo que el orgullo separa. Con hierbas y velas consagradas, obramos para que el amor florezca sin forzar la voluntad.</p>
+        <a href="https://wa.me/12344525514?text=Maestro%20Nazario%2C%20necesito%20consulta%20gratis%20urgente%20%E2%9C%A8" class="cta-inline">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Escríbele al Maestro Nazario
+        </a>
+    </section>
+
+    <!-- MAGIA BLANCA DE ATRACCIÓN -->
+    <section class="reveal" aria-labelledby="s2-title">
+        <h2 id="s2-title">Magia Blanca de Atracción — Sin Forzar la Voluntad</h2>
+        <p class="section-subtitle">El amor verdadero no se impone: se llama. Con velas consagradas, miel y especias que preparo según la tradición de mi linaje nicaragüense, obramos para que esa persona sienta el llamado del alma.</p>
+        
+        <p>Sin presión, sin daño: solo la energía limpia de la tierra que despierta lo que el orgullo dormía. Muchos <strong>brujos consulta gratis</strong> prometen dominación; yo te ofrezco atracción pura. La diferencia está en el oficio y en el respeto por las fuerzas que nos rodean. Hoy puedo tomar 3 casos más — después cierro consulta hasta mañana.</p>
+        <a href="https://wa.me/12344525514?text=Maestro%20Nazario%2C%20quiero%20atraer%20a%20mi%20ser%20querido%20sin%20forzar%20su%20voluntad%20%E2%9C%A8" class="cta-inline">Solicita tu Consulta Gratis Ahora</a>
+    </section>
+
+    <!-- AMARRES DE AMOR CASEROS -->
+    <section class="reveal" aria-labelledby="s3-title">
+        <h2 id="s3-title">Amarres de Amor Caseros — Rituales que Vienen del Rancho</h2>
+        <p class="section-subtitle">Sencillos ante el ojo humano, profundos en el espíritu. Rituales que mi abuela preparaba en la cocina de su rancho en Nicaragua. Con lo que había: una vela, un cordón, un poco de miel y la oración correcta.</p>
+        
+        <p>Esa es la esencia de los amarres de amor caseros que aún hoy realizo para que piense en usted y le escriba. Con un sencillo altar y la energía del maestro, esa persona sentirá la necesidad de buscarte y comunicarse. Sin presión, sin daño: solo el llamado del alma. Respuesta en minutos — escribe AHORA.</p>
+        <a href="https://wa.me/12344525514?text=Maestro%20Nazario%2C%20necesito%20un%20amarre%20de%20amor%20casero%20%E2%9C%A8" class="cta-inline">Pide tu Amarre Casero — Consulta Gratis</a>
+    </section>
+
+    <!-- PROTECCIÓN Y LIMPIEZA -->
+    <section class="reveal" aria-labelledby="s4-title">
+        <h2 id="s4-title">Protección y Limpieza — Antes de Amarrar, Hay que Desatar</h2>
+        <p class="section-subtitle">Quito malas energías, envidias y rivales con la fuerza de la tierra. El camino se limpia para que el amor entre sin tropiezos. Si sientes que todo se te cierra, que hay algo que no te deja avanzar, probablemente necesitas una limpieza profunda antes de cualquier amarre.</p>
+        
+        <p>No se puede sembrar en tierra envenenada. Primero limpio tu campo energético, retiro lo que estorba, y luego el amarre florece sin resistencia. Con los <strong>brujos consulta gratis</strong> del Maestro Nazario, desatar para después unir es la regla de oro.</p>
+        <a href="https://wa.me/12344525514?text=Maestro%20Nazario%2C%20necesito%20una%20limpieza%20espiritual%20gratis%20%E2%9C%A8" class="cta-inline">Pide tu Limpieza Gratuita</a>
+    </section>
+
+    <!-- DESATAR PARA DESPUÉS UNIR — VIDEOS -->
+    <section class="reveal" aria-labelledby="s5-title">
+        <h2 id="s5-title">Desatar para Después Unir — Rituales Reales en Video</h2>
+        <p class="section-subtitle">Mira el oficio en acción. Estos son rituales auténticos del Maestro Nazario, realizados con la energía canalizada y el respeto que las fuerzas merecen.</p>
+        <div class="video-vertical">
+            <video autoplay muted loop playsinline preload="metadata" poster="https://googleads.mkinnovador.com/banco/videos/ritual-de-vela-roja-y-mano-caratula.webp">
+                <source src="https://googleads.mkinnovador.com/banco/videos/ritual-de-vela-roja-y-mano.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p style="font-size:.82rem;color:rgba(255,255,255,.55);">Ritual de vela roja — limpieza y apertura de caminos</p>
+        <div class="video-vertical">
+            <video autoplay muted loop playsinline preload="metadata" poster="https://googleads.mkinnovador.com/banco/videos/ritual-de-velas-encendidas-con-humo-caratula.webp">
+                <source src="https://googleads.mkinnovador.com/banco/videos/ritual-de-velas-encendidas-con-humo.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p style="font-size:.82rem;color:rgba(255,255,255,.55);">Velas encendidas con humo — desatar lo que estorba</p>
+        <a href="https://wa.me/12344525514?text=Maestro%20Nazario%2C%20vi%20tus%20rituales%20y%20quiero%20consulta%20gratis%20%E2%9C%A8" class="cta-inline">Quiero mi Consulta Gratis — Escríbeme YA</a>
+    </section>
+
+    <!-- SERVICIO PRINCIPAL: brujos consulta gratis -->
+    <section class="reveal" aria-labelledby="s6-title">
+        <h2 id="s6-title">Brujos Consulta Gratis — Atención Inmediata 24/7</h2>
+        <p class="section-subtitle">El servicio más buscado por quienes necesitan orientación espiritual urgente. Primera consulta sin costo, sin compromiso, con respuesta en minutos.</p>
+        <img src="https://brujos-consulta-gratis.linkdeamor.com/optimizado/ag-202402363670/banco-altar-esoterico-con-devoto.webp" alt="Brujos consulta gratis altar esotérico con devoto" width="800" height="960" class="section-img" loading="lazy" decoding="async">
+        <p>Analizo tu caso con detenimiento. No hay prisa: el amor verdadero sabe esperar. Determino qué tipo de trabajo necesitas según lo que el tarot y mi intuición me dictan. Pocos <strong>brujos consulta gratis</strong> se atreven a ofrecer esta garantía; yo puedo porque sé lo que hago. Hoy puedo tomar 3 casos más.</p>
+        <a href="https://wa.me/12344525514?text=Hola%20Maestro%20Nazario%2C%20vi%20tu%20p%C3%A1gina%20de%20brujos%20consulta%20gratis%20y%20necesito%20ayuda%20%E2%9C%A8" class="cta-inline">Consulta Gratis — Respuesta en Minutos</a>
+    </section>
+
+    <!-- TAROT PROFESIONAL -->
+    <section class="reveal" aria-labelledby="s7-title">
+        <h2 id="s7-title">Tarot Profesional — Revelación de Destino</h2>
+        <p class="section-subtitle">Las cartas no mienten, hijo. Antes de cualquier trabajo, el tarot me revela lo que el corazón calla y lo que el destino tiene escrito. Con esa guía, el amarre se hace certero y sin daño alguno.</p>
+        
+        <p>Entre <strong>brujos consulta gratis</strong>, el que no consulta las cartas primero camina a ciegas. Yo no doy un paso sin que el tarot me muestre el camino. Esa es la diferencia entre un maestro de linaje y un improvisado.</p>
+        <a href="https://wa.me/12344525514?text=Maestro%20Nazario%2C%20quiero%20una%20lectura%20de%20tarot%20gratis%20%E2%9C%A8" class="cta-inline">Lectura de Tarot Gratis Ahora</a>
+    </section>
+
+    <!-- SOBRE EL MAESTRO NAZARIO -->
+    <section class="reveal" aria-labelledby="s8-title">
+        <h2 id="s8-title">Maestro Nazario — Brujos en Nicaragua de Linaje Ancestral</h2>
+        <p class="section-subtitle">El arte que heredé de mi abuela, y ella de la suya. Más de 35 años de práctica en este camino.</p>
+        
+        <p>Nací y crecí en Nicaragua, entre veladoras, hierbas de monte y oraciones que se transmiten en voz baja. No prometo milagros: prometo oficio, respeto por las fuerzas que nos rodean y una voluntad inquebrantable de ayudarte. He forjado mi reputación ayudando a cientos de almas a conquistar sus deseos amorosos, su éxito profesional y su poder personal.</p>
+        <p>Donde otros fracasan, yo triunfo —no por vanidad, sino porque sé escuchar lo que el espíritu me dicta. Cada caso es único; cada corazón, un mundo. Cuéntame tu caso, te leo personalmente. Soy el <strong>Maestro Nazario</strong>, y los <strong>brujos consulta gratis</strong> de verdad no se esconden detrás de una pantalla: te responden directo por WhatsApp.</p>
+        <a href="https://wa.me/12344525514?text=Maestro%20Nazario%2C%20te%20escribo%20para%20consulta%20gratis%20%E2%9C%A8" class="cta-inline">Escríbele al Maestro Nazario</a>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="reveal" aria-labelledby="s9-title">
+        <h2 id="s9-title">Lo que Dicen Quienes Ya Volvieron a Sonreír</h2>
+        <div class="card-grid">
+            <div class="testimonial-card">
+                <span class="stars">★★★★★</span>
+                <p class="quote">"La verdad yo no creía en estas cosas, pero un amarre de amor casero que me preparó el Maestro Nazario cambió todo. A los 8 días mi ex me escribió pidiendo verme. Llevábamos siete meses sin hablarnos. Se lo juro que aún no me lo explico, pero funcionó."</p>
+                <span class="author">Yolanda R.</span>
+                <span class="city">Houston, TX</span>
+            </div>
+            <div class="testimonial-card">
+                <span class="stars">★★★★★</span>
+                <p class="quote">"Intenté de todo: psicólogo, retiros, hasta otro brujo que me dejó igual. El Maestro Nazario me escuchó sin prisa, me explicó el ritual con velas y en menos de dos semanas mi pareja volvió a casa. Ahora hasta me ayuda con la limpieza espiritual cada mes."</p>
+                <span class="author">Héctor Navarro</span>
+                <span class="city">Phoenix, AZ</span>
+            </div>
+            <div class="testimonial-card">
+                <span class="stars">★★★★★</span>
+                <p class="quote">"Estaba desesperado; mi mujer se había ido con otro y no contestaba mis mensajes. El maestro me hizo un amarre casero para que pensara en mí y me escribiera. A los cinco días exactos recibí un 'hola, ¿cómo estás?' que me devolvió la vida."</p>
+                <span class="author">Ramón C.</span>
+                <span class="city">Charlotte, NC</span>
+            </div>
+            <div class="testimonial-card">
+                <span class="stars">★★★★★</span>
+                <p class="quote">"Soy escéptico por naturaleza, pero este señor tiene una paz y una sabiduría que inspiran confianza. El amarre de amor que me hizo fue efectivo y, lo mejor, no sentí presión ni miedo en ningún momento. Recomiendo al Maestro Nazario de corazón."</p>
+                <span class="author">Edwin J.</span>
+                <span class="city">Fresno, CA</span>
+            </div>
+            <div class="testimonial-card">
+                <span class="stars">★★★★★</span>
+                <p class="quote">"Llevaba un año sin saber nada de él. Me hice la consulta gratis con el Maestro Nazario y a las dos semanas ya estábamos hablando otra vez. No sé cómo lo hizo, pero estoy agradecida. La limpieza espiritual fue clave."</p>
+                <span class="author">Lucía Mendoza</span>
+                <span class="city">Orlando, FL</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="reveal" aria-labelledby="faq-title">
+        <h2 id="faq-title">Preguntas Frecuentes — Brujos Consulta Gratis</h2>
+        <div class="faq-wrapper">
+            <details>
+                <summary>¿Cómo funciona la consulta gratis con los brujos del Maestro Nazario? <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+                <div class="faq-answer">Simplemente escríbele al Maestro Nazario por WhatsApp. Él analiza tu caso personalmente, sin prisa y sin compromiso. La primera consulta es totalmente gratuita y recibes orientación espiritual directa de un maestro con más de 35 años de experiencia en brujería ancestral nicaragüense.</div>
+            </details>
+            <details>
+                <summary>¿Qué necesito para mi consulta gratis por WhatsApp? <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+                <div class="faq-answer">Solo necesitas tu teléfono con WhatsApp y contar tu situación con sinceridad. No necesitas enviar fotos, documentos ni pagar nada por adelantado. El Maestro Nazario te escucha y te orienta con base en lo que el tarot y su intuición le revelan.</div>
+            </details>
+            <details>
+                <summary>¿El Maestro Nazario realmente ofrece consulta gratis sin compromiso? <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+                <div class="faq-answer">Sí. La consulta inicial es completamente gratuita y sin ningún compromiso. Solo pagas cuando veas resultados en tu trabajo, como medida de garantía. Pocos brujos consulta gratis se atreven a ofrecer esto; el Maestro Nazario puede porque confía plenamente en su oficio.</div>
+            </details>
+            <details>
+                <summary>¿Cuánto tarda en responderme el brujo después de escribir? <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+                <div class="faq-answer">La respuesta es inmediata. El Maestro Nazario atiende personalmente su WhatsApp las 24 horas del día, los 7 días de la semana. Si escribes ahora mismo, recibirás orientación en cuestión de minutos.</div>
+            </details>
+            <details>
+                <summary>¿Qué tipo de problemas puedo consultar con los brujos consulta gratis? <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+                <div class="faq-answer">Puedes consultar sobre amor y pareja (amarres, retorno, endulzamiento), protección y limpieza espiritual, tarot profesional para revelación de destino, éxito profesional y poder personal. Cada caso es único y el Maestro Nazario te orienta según lo que el espíritu le dicta.</div>
+            </details>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="reveal" style="text-align:center;padding-bottom:48px;" aria-label="Llamada final">
+        <h2 style="font-family:var(--font-title);font-size:clamp(1.4rem,4vw,1.7rem);color:#fff;margin-bottom:8px;">¿Listo para cambiar tu destino?</h2>
+        <p style="color:rgba(255,255,255,.75);max-width:88%;margin:0 auto 18px;">Primero trabajo, después pagas. Así de sencillo, así de justo. Pocos <strong>brujos consulta gratis</strong> se atreven a ofrecer esta garantía. Hoy puedo tomar 3 casos más — escribe AHORA.</p>
+        <a href="https://wa.me/12344525514?text=Maestro%20Nazario%2C%20listo%20para%20mi%20consulta%20gratis%20%E2%9C%A8" class="cta-inline" style="font-size:1.05rem;padding:15px 30px;">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Consulta Gratis por WhatsApp
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-section reveal">
+        <p>Maestro Nazario · Brujos Consulta Gratis 24/7 · Sabiduría Ancestral de Nicaragua</p>
+        <p style="margin-top:4px;">© 2025 · Todos los derechos reservados · <a href="https://brujos-consulta-gratis.linkdeamor.com/">brujos-consulta-gratis.linkdeamor.com</a></p>
+    </footer>
+</main>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "¿Cómo funciona la consulta gratis con los brujos del Maestro Nazario?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Simplemente escríbele al Maestro Nazario por WhatsApp. Él analiza tu caso personalmente, sin prisa y sin compromiso. La primera consulta es totalmente gratuita y recibes orientación espiritual directa de un maestro con más de 35 años de experiencia en brujería ancestral nicaragüense."
+            }
+        }, {
+            "@type": "Question",
+            "name": "¿Qué necesito para mi consulta gratis por WhatsApp?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Solo necesitas tu teléfono con WhatsApp y contar tu situación con sinceridad. No necesitas enviar fotos, documentos ni pagar nada por adelantado. El Maestro Nazario te escucha y te orienta con base en lo que el tarot y su intuición le revelan."
+            }
+        }, {
+            "@type": "Question",
+            "name": "¿El Maestro Nazario realmente ofrece consulta gratis sin compromiso?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. La consulta inicial es completamente gratuita y sin ningún compromiso. Solo pagas cuando veas resultados en tu trabajo, como medida de garantía. Pocos brujos consulta gratis se atreven a ofrecer esto; el Maestro Nazario puede porque confía plenamente en su oficio."
+            }
+        }, {
+            "@type": "Question",
+            "name": "¿Cuánto tarda en responderme el brujo después de escribir?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La respuesta es inmediata. El Maestro Nazario atiende personalmente su WhatsApp las 24 horas del día, los 7 días de la semana. Si escribes ahora mismo, recibirás orientación en cuestión de minutos."
+            }
+        }, {
+            "@type": "Question",
+            "name": "¿Qué tipo de problemas puedo consultar con los brujos consulta gratis?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Puedes consultar sobre amor y pareja (amarres, retorno, endulzamiento), protección y limpieza espiritual, tarot profesional para revelación de destino, éxito profesional y poder personal. Cada caso es único y el Maestro Nazario te orienta según lo que el espíritu le dicta."
+            }
+        }]
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Brujos Consulta Gratis Maestro Nazario",
+        "description": "Consulta espiritual gratuita por WhatsApp 24/7 con el Maestro Nazario, brujo de linaje ancestral nicaragüense. Amarres de amor caseros, protección y limpieza espiritual, tarot profesional.",
+        "provider": {
+            "@type": "Person",
+            "name": "Maestro Nazario",
+            "description": "Brujo nicaragüense con más de 35 años de práctica en brujería ancestral, amarres de amor, tarot y limpieza espiritual."
+        },
+        "url": "https://brujos-consulta-gratis.linkdeamor.com/",
+        "areaServed": {
+            "@type": "Country",
+            "name": "Estados Unidos"
+        },
+        "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://wa.me/12344525514",
+            "availableLanguage": "es"
+        }
+    }
+</script>
+
+<!-- Reveal Animation Script -->
+<script>
+    (function() {
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const reveals = document.querySelectorAll('.reveal');
+        if (reducedMotion) {
+            reveals.forEach(el => el.classList.add('visible'));
+            return;
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.18, rootMargin: '0px 0px -30px 0px' });
+        reveals.forEach((el, i) => {
+            el.style.transitionDelay = (i % 5) * 0.05 + 's';
+            observer.observe(el);
+        });
+    })();
+</script>
+<script src="https://googleads.mkinnovador.com/wa-tracker.js" defer></script>
+<script id="wa-maq-loader">(function(){if(/[?&](maquetador|mq)\b/.test(location.search)&&!window.__waMaq){var s=document.createElement('script');s.src='https://googleads.mkinnovador.com/maquetador.js?v=1';s.defer=true;(document.head||document.documentElement).appendChild(s);}})();</script>
+<script id="wa-reveal-guard-js">(function(){var fixed=false;function hid(){var o=[],a=document.querySelectorAll('[class],[data-reveal],[data-aos]');for(var i=0;i<a.length;i++){var e=a[i];if(e.closest&&e.closest('#maq-host'))continue;var c;try{c=getComputedStyle(e)}catch(x){continue}if(!c||c.display==='none'||c.visibility==='hidden')continue;if(c.position==='fixed')continue;if(e.getAttribute('aria-hidden')==='true')continue;if(parseFloat(c.opacity||'1')>0.05)continue;if(!(e.textContent||'').replace(/\s+/g,''))continue;o.push(e)}return o}function inView(e){var r=e.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight&&r.height>0}function fixAll(){if(fixed)return;fixed=true;var els=hid();for(var i=0;i<els.length;i++){var e=els[i];e.classList.add('visible');e.style.setProperty('opacity','1','important');e.style.setProperty('transform','none','important')}var st=document.querySelectorAll('.reveal,.reveal-stagger');for(var j=0;j<st.length;j++)st[j].classList.add('visible')}function check(){if(fixed)return;var els=hid();for(var i=0;i<els.length;i++){if(inView(els[i])){fixAll();return}}}setTimeout(check,1600);setTimeout(check,3500);var t=0;addEventListener('scroll',function(){if(fixed)return;var n=Date.now();if(n-t<400)return;t=n;setTimeout(check,250)},{passive:true})})();</script>
+<!--WA-FAB:pergamino-sagrado--><div class="wfab-perg"><style>
+.wfab-perg{position:fixed;right:16px;bottom:16px;z-index:99999}
+.wfab-perg a{display:flex;align-items:center;gap:11px;padding:10px 18px 10px 10px;border-radius:14px;background:linear-gradient(170deg,#2b2113,#171009);border:1.5px solid #b8860b;color:#e9d8a6;font:700 14px/1.15 Georgia,'Times New Roman',serif;font-style:italic;text-decoration:none;box-shadow:0 8px 26px rgba(0,0,0,.5),inset 0 0 18px rgba(184,134,11,.18);animation:wfabPergFloat 5.5s ease-in-out infinite}
+.wfab-perg .wi{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:#149a4e;color:#fff;flex:0 0 auto;font-style:normal}
+@keyframes wfabPergFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@media (prefers-reduced-motion:reduce){.wfab-perg a{animation:none!important}}
+</style><a href="https://wa.me/12344525514?text=Hola%20Maestro%20Nazario%2C%20quiero%20mi%20consulta%20gratis%20%E2%9C%A8" target="_blank" rel="noopener" aria-label="Chatea por WhatsApp"><span class="wi"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span><span>Habla con el Maestro</span></a></div><!--/WA-FAB-->
+<script id="kz-video-io">(function(){var vs=[].slice.call(document.querySelectorAll('video'));if(!vs.length)return;vs.forEach(function(v){v.muted=true;v.defaultMuted=true;v.playsInline=true;v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','');v.removeAttribute('controls');});function tryPlay(v){var p=v.play();if(p&&p.catch)p.catch(function(){});}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&e.intersectionRatio>=0.4){tryPlay(e.target);}else{e.target.pause();}});},{threshold:[0,0.4,1]});vs.forEach(function(v){io.observe(v);});function kick(){vs.forEach(function(v){var r=v.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){if(v.readyState===0){try{v.load();}catch(err){}}tryPlay(v);}});}['touchstart','click','scroll'].forEach(function(ev){addEventListener(ev,function h(){kick();removeEventListener(ev,h);},{passive:true});});setTimeout(kick,400);})();</script>
+</body>
+</html>
