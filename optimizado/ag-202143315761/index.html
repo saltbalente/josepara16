@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brujos cerca de mi: consulta gratis con el Maestro Hilario. Soluciones espirituales, limpiezas, amarres y revelación de destino por WhatsApp para hispanos en USA.">
+    <title>Brujos Cerca De Mí | Consulta Gratis y Soluciones Espirituales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #111111;
+            --surface: #1a1a1a;
+            --text: #ffffff;
+            --cta: #25d366;
+            --cta-hover: #1eba54;
+            --accent: #c9a227;
+            --accent-glow: rgba(201, 162, 39, 0.18);
+            --text-muted: rgba(255, 255, 255, 0.78);
+            --text-soft: rgba(255, 255, 255, 0.60);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --radius-card: 20px;
+            --radius-btn: 5px;
+            --font-heading: 'Cinzel', serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* Header sticky */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 90;
+            background: rgba(17, 17, 17, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            min-height: 52px;
+        }
+        .site-header .brand {
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.04em;
+            line-height: 1.1;
+            flex: 1;
+            min-width: 0;
+        }
+        .site-header .brand span {
+            display: block;
+            font-size: 0.68rem;
+            font-weight: 400;
+            color: var(--text-soft);
+            letter-spacing: 0.02em;
+        }
+        .btn-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--cta);
+            color: #fff;
+            text-decoration: none;
+            padding: 9px 15px;
+            border-radius: var(--radius-btn);
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.01em;
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+        }
+        .btn-header:hover {
+            background: var(--cta-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.28);
+        }
+        .btn-header svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        /* Hero con video */
+        .hero {
+            position: relative;
+            min-height: 92svh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: #0a0a0a;
+        }
+        .hero video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .hero .overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.72) 78%);
+        }
+        .hero .overlay-accent {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: rgba(201, 162, 39, 0.10);
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 40px 20px 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 16px;
+        }
+        .badge-pill {
+            display: inline-block;
+            padding: 7px 16px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: var(--font-heading);
+            opacity: 0;
+            animation: fadeUp 0.7s ease-out forwards;
+            animation-delay: 0s;
+        }
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.3rem, 9vw, 3.6rem);
+            font-weight: 800;
+            line-height: 1.05;
+            color: #ffffff;
+            text-shadow: 0 3px 18px rgba(0, 0, 0, 0.55);
+            letter-spacing: -0.01em;
+            opacity: 0;
+            animation: fadeUp 0.7s ease-out forwards;
+            animation-delay: 0.2s;
+            max-width: 480px;
+        }
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            max-width: 380px;
+            opacity: 0;
+            animation: fadeUp 0.7s ease-out forwards;
+            animation-delay: 0.4s;
+        }
+        .btn-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--cta);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: var(--radius-btn);
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.01em;
+            animation: ctaPulse 2.5s infinite;
+            opacity: 0;
+            animation-name: fadeUp, ctaPulse;
+            animation-duration: 0.7s, 2.5s;
+            animation-delay: 0.6s, 0s;
+            animation-fill-mode: forwards, none;
+            animation-timing-function: ease-out, ease-in-out;
+            box-shadow: 0 0 28px rgba(37, 211, 102, 0.35), 0 8px 22px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 40px rgba(37, 211, 102, 0.50), 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+        .btn-hero svg {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+        .hero-trust {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.70);
+            letter-spacing: 0.03em;
+            opacity: 0;
+            animation: fadeUp 0.7s ease-out forwards;
+            animation-delay: 0.8s;
+        }
+        .scroll-arrow {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            animation: arrowBounce 2s infinite;
+            color: rgba(255, 255, 255, 0.65);
+            opacity: 0;
+            animation: fadeUp 0.7s ease-out forwards, arrowBounce 2s 1s infinite;
+            animation-delay: 0.9s, 1s;
+        }
+        .scroll-arrow svg {
+            width: 26px;
+            height: 26px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.8;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes ctaPulse {
+            0%,
+            100% {
+                box-shadow: 0 0 28px rgba(37, 211, 102, 0.35), 0 8px 22px rgba(0, 0, 0, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 44px rgba(37, 211, 102, 0.55), 0 12px 30px rgba(0, 0, 0, 0.55);
+            }
+        }
+        @keyframes arrowBounce {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(7px);
+            }
+        }
+
+        /* Secciones generales */
+        main {
+            display: block;
+        }
+        section {
+            padding: 44px 20px;
+            max-width: 560px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .section-label {
+            font-family: var(--font-heading);
+            font-size: 0.72rem;
+            letter-spacing: 0.10em;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.35rem, 5vw, 1.75rem);
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 14px;
+            line-height: 1.25;
+            letter-spacing: 0.02em;
+        }
+        p {
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+            letter-spacing: 0.01em;
+        }
+        .img-card {
+            width: 100%;
+            max-width: 340px;
+            aspect-ratio: 5 / 6;
+            object-fit: cover;
+            border-radius: var(--radius-card);
+            display: block;
+            margin: 0 auto 20px;
+            max-height: 45vh;
+            height: auto;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+            border: 1px solid var(--border-subtle);
+        }
+        .btn-section {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--cta);
+            color: #fff;
+            text-decoration: none;
+            padding: 13px 24px;
+            border-radius: var(--radius-btn);
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            box-shadow: 0 0 18px rgba(37, 211, 102, 0.25);
+            margin-top: 6px;
+        }
+        .btn-section:hover {
+            background: var(--cta-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(37, 211, 102, 0.40);
+        }
+        .btn-section svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 11px 22px;
+            border-radius: var(--radius-btn);
+            border: 1.5px solid var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+        }
+        .btn-outline:hover {
+            background: var(--accent);
+            color: #111;
+            transform: translateY(-2px);
+        }
+
+        /* Tarjetas de servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 12px;
+        }
+        .service-card {
+            background: var(--surface);
+            border-radius: var(--radius-card);
+            padding: 22px 18px;
+            border: 1px solid var(--border-subtle);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+        .service-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+        }
+        .service-card .icon-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+        .service-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+            letter-spacing: 0.02em;
+        }
+        .service-card p {
+            font-size: 0.88rem;
+            color: var(--text-soft);
+            margin: 0;
+        }
+
+        /* Pasos numerados */
+        .step-block {
+            background: var(--surface);
+            border-radius: var(--radius-card);
+            padding: 20px 18px;
+            border: 1px solid var(--border-subtle);
+            margin-bottom: 14px;
+            border-left: 3px solid var(--accent);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .step-block:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+        }
+        .step-block .step-num {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .step-block h3 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+            letter-spacing: 0.02em;
+        }
+        .step-block p {
+            font-size: 0.88rem;
+            color: var(--text-soft);
+            margin: 0;
+        }
+
+        /* Testimonios */
+        .testimonial-card {
+            background: var(--surface);
+            border-radius: var(--radius-card);
+            padding: 20px 18px;
+            border: 1px solid var(--border-subtle);
+            margin-bottom: 12px;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+        }
+        .testimonial-card .quote-mark {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--accent);
+            line-height: 0.6;
+            display: block;
+            margin-bottom: 6px;
+            opacity: 0.7;
+        }
+        .testimonial-card p {
+            font-style: italic;
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 8px;
+            letter-spacing: 0.01em;
+        }
+        .testimonial-card .author {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--accent);
+            letter-spacing: 0.03em;
+        }
+        .testimonial-card .city {
+            font-size: 0.75rem;
+            color: var(--text-soft);
+        }
+
+        /* FAQ */
+        details {
+            background: var(--surface);
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border-subtle);
+            margin-bottom: 10px;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+        details:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+        }
+        summary {
+            padding: 15px 18px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            letter-spacing: 0.01em;
+            font-family: var(--font-body);
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary .arrow {
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent);
+            stroke-width: 2;
+        }
+        details[open] summary .arrow {
+            transform: rotate(180deg);
+        }
+        details .answer {
+            padding: 0 18px 16px;
+            font-size: 0.88rem;
+            color: var(--text-soft);
+            line-height: 1.6;
+        }
+
+        /* Garantía / CTA final */
+        .cta-block {
+            background: var(--surface);
+            border-radius: var(--radius-card);
+            padding: 28px 20px;
+            text-align: center;
+            border: 1px solid rgba(201, 162, 39, 0.30);
+            position: relative;
+        }
+        .cta-block h2 {
+            margin-bottom: 8px;
+        }
+        .cta-block p {
+            margin-bottom: 16px;
+        }
+
+        /* Footer */
+        .site-footer {
+            text-align: center;
+            padding: 24px 20px 32px;
+            font-size: 0.78rem;
+            color: var(--text-soft);
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 12px;
+        }
+        .site-footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Animaciones de entrada */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-stagger>* {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal-stagger.visible>*:nth-child(1) {
+            transition-delay: 0s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-stagger.visible>*:nth-child(2) {
+            transition-delay: 0.08s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-stagger.visible>*:nth-child(3) {
+            transition-delay: 0.16s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-stagger.visible>*:nth-child(4) {
+            transition-delay: 0.24s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-stagger.visible>*:nth-child(5) {
+            transition-delay: 0.32s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-stagger.visible>*:nth-child(6) {
+            transition-delay: 0.40s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .reveal,
+            .reveal.visible,
+            .reveal-stagger>*,
+            .reveal-stagger.visible>* {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+            .hero h1,
+            .hero-subtitle,
+            .badge-pill,
+            .btn-hero,
+            .hero-trust,
+            .scroll-arrow {
+                opacity: 1 !important;
+                animation: none !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            section {
+                max-width: 680px;
+                padding: 52px 24px;
+            }
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 18px;
+            }
+            .hero-content {
+                padding: 50px 30px 40px;
+            }
+            .img-card {
+                max-width: 380px;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Maestro Hilario - Brujos Cerca De Mí",
+            "description": "Consultas espirituales, limpiezas, amarres y revelación de destino con brujos cerca de mi. Atención por WhatsApp a hispanos en todo Estados Unidos.",
+            "telephone": "+12146138213",
+            "url": "https://brujos-cerca-de-mi.paginasdebrujos.store/",
+            "areaServed": {
+                "@type": "Country",
+                "name": "Estados Unidos"
+            },
+            "availableLanguage": "es",
+            "priceRange": "$",
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "00:00",
+                "closes": "23:59"
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+                "@type": "Question",
+                "name": "¿Cómo funciona una consulta con brujos cerca de mi?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Escribes al Maestro Hilario por WhatsApp, él canaliza tu energía a distancia y utiliza su altar y herramientas espirituales para revelar tu situación sin que tengas que moverte de casa."
+                }
+            }, {
+                "@type": "Question",
+                "name": "¿Puedo consultar con el brujo desde cualquier ciudad de Estados Unidos?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí. El Maestro Hilario atiende por WhatsApp a hispanos en todo Estados Unidos: Houston, Dallas, Phoenix, Orlando, Charlotte, Newark, Fresno, El Paso y cualquier otra ciudad, sin importar la distancia ni la hora."
+                }
+            }, {
+                "@type": "Question",
+                "name": "¿Qué necesito para mi consulta gratis con brujos cerca de mi?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Solo tu disposición y sinceridad. El Maestro Hilario se encarga del resto, usando su experiencia de más de 35 años, velas, hierbas y su don espiritual para leer tu destino."
+                }
+            }, {
+                "@type": "Question",
+                "name": "¿El brujo puede ayudarme con problemas de amor y pareja?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Por supuesto. El Maestro es especialista en amarres, endulzamientos y retiro de rivales. Su trabajo espiritual revela el hilo de tu destino amoroso y lo guía hacia la reconciliación."
+                }
+            }, {
+                "@type": "Question",
+                "name": "¿Es confiable una consulta espiritual a distancia con brujos cerca de mi?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Totalmente. La energía no conoce fronteras. El Maestro Hilario cruza mente, cuerpo y espíritu a través de su altar, sin importar la distancia que los separe. Miles de consultas lo respaldan."
+                }
+            }, {
+                "@type": "Question",
+                "name": "¿En cuánto tiempo veo resultados con un trabajo de brujería?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Cada caso es único, pero el Maestro Hilario comienza a tejer tu destino desde la primera consulta. Muchos clientes reportan señales y movimientos positivos en pocos días, especialmente en trabajos de amor y limpieza espiritual."
+                }
+            }]
+        }
+    </script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KGLT8DG');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11495571750"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11495571750');gtag('config','AW-11034559801');gtag('config','AW-682101450');gtag('config','AW-16586320392');gtag('config','AW-16892054054');gtag('config','AW-16568918455');</script>
+<style id="wa-reveal-guard">@media (prefers-reduced-motion:reduce){.reveal,.reveal-stagger>*,[data-reveal],[data-aos]{opacity:1!important;transform:none!important}}</style><noscript id="wa-reveal-guard-ns"><style>.reveal,.reveal-stagger>*,[data-reveal],[data-aos]{opacity:1!important;transform:none!important}</style></noscript>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%236d28d9'/><text x='32' y='44' font-size='34' text-anchor='middle'>🔮</text></svg>">
+</head>
+<body>
+<script id="wa-slider-guard">(function(){if(window.__waSliderGuard)return;window.__waSliderGuard=1;var o=Element.prototype.scrollIntoView;Element.prototype.scrollIntoView=function(){var c=this.parentElement;while(c&&c!==document.body&&!(c.scrollWidth>c.clientWidth+8))c=c.parentElement;if(c&&c!==document.body){var cr=c.getBoundingClientRect(),er=this.getBoundingClientRect();c.scrollTo({left:c.scrollLeft+(er.left-cr.left)-(cr.width-er.width)/2,behavior:'smooth'});return}return o.apply(this,arguments)};})();</script>
+<script id="wa-touch-guard">(function(){if(window.__waTouchGuard)return;window.__waTouchGuard=1;var o=EventTarget.prototype.addEventListener;EventTarget.prototype.addEventListener=function(t,f,x){if(t==='touchmove'||t==='touchstart'){var p=(typeof x==='object'&&x)?x:{capture:x===true};if(p.passive!==true)x={capture:!!p.capture,once:!!p.once,passive:true};}return o.call(this,t,f,x);};addEventListener('DOMContentLoaded',function(){try{var els=document.body.querySelectorAll('*');for(var i=0;i<els.length;i++){var c=getComputedStyle(els[i]).touchAction;if(c==='none'||c==='pan-x'){els[i].style.touchAction='pan-x pan-y pinch-zoom';}}}catch(e){}});})();</script>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGLT8DG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <header class="site-header">
+        <div class="brand">Maestro Hilario<span>✦ Brujos Cerca De Mí</span></div>
+        <a href="https://wa.me/12146138213?text=Hola%20Maestro%20Hilario%2C%20quiero%20consultar%20con%20brujos%20cerca%20de%20mi" class="btn-header" aria-label="Hablar por WhatsApp con el Maestro Hilario">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+        </a>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" aria-label="Brujos cerca de mi - Consulta gratis">
+            <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                <source src="https://googleads.mkinnovador.com/banco/videos/manos-barajando-cartas-de-tarot.mp4" type="video/mp4">
+            </video>
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="overlay-accent" aria-hidden="true"></div>
+            <div class="hero-content">
+                <span class="badge-pill">✦ Maestro Hilario disponible ahora</span>
+                <h1>Brujos Cerca De Mí: Consulta Gratis Y Revela Tu Destino</h1>
+                <p class="hero-subtitle">Lo que el silencio oculta, el espíritu lo revela. Respuestas inmediatas a tu alcance, sin importar la distancia.</p>
+                <a href="https://wa.me/12146138213?text=Hola%20Maestro%20Hilario%2C%20deseo%20mi%20consulta%20gratis%20con%20brujos%20cerca%20de%20mi" class="btn-hero">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Consulta Gratis por WhatsApp
+                </a>
+                <p class="hero-trust">⭐ 4.9 · +5.000 consultas · respuesta inmediata</p>
+            </div>
+            <div class="scroll-arrow" aria-hidden="true">
+                <svg aria-hidden="true" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: Alta Brujería y Tarot Profesional -->
+        <section class="reveal">
+            <span class="section-label">Brujos Cerca De Mí</span>
+            <h2>Alta Brujería y Tarot Profesional</h2>
+            
+            <p>Donde la lectura de cartas se entrelaza con la verdadera magia. En la mesa de un brujo profesional, cada arcano es una llama que ilumina tu sendero. No se trata solo de ver: se trata de transformar. Lo que hoy te pesa puede aligerarse cuando unas manos expertas canalizan la energía correcta.</p>
+            <p>El Maestro Hilario trabaja con alta brujería —blanca, roja y negra— siempre al servicio de tu bienestar. Su altar es un portal donde las velas consumen las dudas y las hierbas abren los caminos que creías cerrados.</p>
+            <a href="https://wa.me/12146138213?text=Hola%20Maestro%20Hilario%2C%20quiero%20saber%20sobre%20alta%20brujeria%20con%20brujos%20cerca%20de%20mi" class="btn-section">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Solicitar Solución Rápida
+            </a>
+        </section>
+
+        <!-- SECCIÓN 3: Revelación de Destino y Soluciones Rápidas -->
+        <section class="reveal">
+            <h2>Revelación de Destino y Soluciones con Brujos Cerca De Mí</h2>
+            <img src="https://brujos-cerca-de-mi.paginasdebrujos.store/optimizado/ag-202143315761/banco-consultor-esoterico-en-su-despacho.webp"
+            alt="Brujos cerca de mi - consultor esotérico en su despacho preparando un trabajo espiritual"
+            width="800" height="960"
+            class="img-card"
+            loading="lazy" decoding="async"
+            style="aspect-ratio:5/6;object-fit:cover;max-height:45vh;">
+            <p>Si estás buscando <strong>brujos cerca de mi</strong>, el Maestro Hilario tiene la revelación de tu destino en sus manos. Las velas consumen las dudas, las hierbas abren los caminos y tu presente se teje con hilos invisibles que solo una mirada experta puede desenredar. No hace falta que te desplaces: la energía viaja y el Maestro te atiende donde estés.</p>
+            <div class="services-grid reveal-stagger">
+                <div class="service-card">
+                    <span class="icon-dot" aria-hidden="true"></span>
+                    <h3>Amarres de amor y endulzamientos efectivos</h3>
+                    <p>Recupera a quien amas con trabajos de alta precisión espiritual.</p>
+                </div>
+                <div class="service-card">
+                    <span class="icon-dot" aria-hidden="true"></span>
+                    <h3>Retiro de rivales y malas energías</h3>
+                    <p>Limpia tu camino de influencias que frenan tu felicidad.</p>
+                </div>
+                <div class="service-card">
+                    <span class="icon-dot" aria-hidden="true"></span>
+                    <h3>Limpieza espiritual y desatado de entidades</h3>
+                    <p>Libera tu hogar y tu espíritu de cargas que no te pertenecen.</p>
+                </div>
+                <div class="service-card">
+                    <span class="icon-dot" aria-hidden="true"></span>
+                    <h3>Protecciones, contras y sanciones espirituales</h3>
+                    <p>Blinda tu energía contra envidias, trabajos oscuros y maleficios.</p>
+                </div>
+                <div class="service-card">
+                    <span class="icon-dot" aria-hidden="true"></span>
+                    <h3>Solución en dinero, salud y maleficios</h3>
+                    <p>Destraba la abundancia y aleja lo que enferma tu destino.</p>
+                </div>
+            </div>
+            <p style="margin-top:16px;text-align:center;">El universo habla, y nosotros escuchamos.</p>
+            <div style="text-align:center;">
+                <a href="https://wa.me/12146138213?text=Hola%20Maestro%20Hilario%2C%20necesito%20soluciones%20rapidas%20con%20brujos%20cerca%20de%20mi" class="btn-section">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Solicitar Solución Rápida
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: Sobre el Maestro Hilario -->
+        <section class="reveal">
+            <span class="section-label">Sobre el Maestro</span>
+            <h2>Sobre el Maestro Hilario</h2>
+            
+            <p>El Maestro Hilario ha caminado junto a las sombras y la luz por más de 35 años. Su mirada traspasa el velo de lo cotidiano, devolviendo la paz a cientos de almas que buscaban un faro en la oscuridad. Su linaje no se aprende en libros: se hereda de la luna y la tierra, de generaciones que supieron escuchar lo que el universo susurra.</p>
+            <p>Como <strong>brujo cerca de mi</strong> disponible para hispanos en todo Estados Unidos, su compromiso va más allá de las cartas; es un sanador de destinos. Cada lectura es un ritual, un espacio sagrado donde tu voz encuentra eco en el cosmos. La magia blanca, roja y negra se entrelazan en sus manos con maestría, ofreciéndote soluciones efectivas y de alta calidad. La noche nunca es oscura cuando hay quien sabe encender la luz.</p>
+            <div style="text-align:center;">
+                <a href="https://wa.me/12146138213?text=Hola%20Maestro%20Hilario%2C%20quisiera%20hablar%20contigo%20sobre%20brujos%20cerca%20de%20mi" class="btn-outline">Hablar con el Maestro</a>
+            </div>
+            <p style="text-align:center;font-size:0.85rem;color:var(--text-soft);margin-top:8px;">El conocimiento es el refugio del alma.</p>
+        </section>
+
+        <!-- SECCIÓN 5: ¿Cómo Trabaja el Maestro? -->
+        <section class="reveal">
+            <span class="section-label">Proceso Espiritual</span>
+            <h2>¿Cómo Trabaja el Maestro Hilario?</h2>
+            <p>Cada consulta nace de un encuentro sincero. El Maestro canaliza la energía, analiza tu situación y determina qué tipo de trabajo espiritual necesitas. No se trata de adivinar: se trata de ver con los ojos del espíritu lo que tu razón no alcanza.</p>
+        </section>
+
+        <!-- SECCIÓN 6: Paso 1 -->
+        <section class="reveal">
+            <div class="step-block">
+                <span class="step-num">1.</span>
+                <h3>Consulta y Análisis</h3>
+                <p>No se trata de adivinar, sino de ver. A través de las cartas y su altar, el Maestro Hilario desentraña las malas energías, las infidelidades y los bloqueos que apagan tu fuego interior. Cada símbolo revela una verdad que tu alma necesita escuchar.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 7: Paso 2 -->
+        <section class="reveal">
+            <div class="step-block">
+                <span class="step-num">2.</span>
+                <h3>Canalización de Energía</h3>
+                <p>La buena canalización de energía es la llave que abre la puerta a la certeza. Cuando el convencimiento habita en el espíritu, el trabajo toma raíz y florece. El Maestro alinea tu vibración con lo que mereces, creando el puente entre tu presente y el destino que anhelas.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 8: Paso 3 -->
+        <section class="reveal">
+            <div class="step-block">
+                <span class="step-num">3.</span>
+                <h3>Trabajo y Resultado</h3>
+                <p>El destino no se amansa en un día, pero el primer hilo se teje en la primera consulta. Con <strong>brujos cerca de mi</strong> como el Maestro Hilario, atraemos a tu ser querido en 72 horas, doblegando el orgullo y la indiferencia. Donde otros fracasaron, aquí se triunfa.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 9: Maestro Hilario - presencia USA -->
+        <section class="reveal">
+            <h2>Maestro Hilario: Brujo y Vidente Espiritual para Hispanos en USA</h2>
+            <p>Las cartas no engañan: revelan infidelidades, bloqueos y caminos ocultos. El Maestro Hilario canaliza la energía de tu consulta para desentrañar lo que frena tu destino y atraer lo que mereces. Si buscas <strong>brujos cerca de mi</strong>, él te atiende por WhatsApp desde Houston, Dallas, Phoenix, Orlando, Charlotte, Newark, Fresno, El Paso y cualquier rincón de Estados Unidos.</p>
+            <p>Respuesta rápida · Privacidad total · Sin compromiso. Estás a un mensaje de cambiar tu historia.</p>
+            <div style="text-align:center;">
+                <a href="https://wa.me/12146138213?text=Hola%20Maestro%20Hilario%2C%20te%20busco%20como%20brujo%20cerca%20de%20mi%20para%20consulta" class="btn-section">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Consultar por WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 10: Pagas al Ver Resultados -->
+        <section class="reveal">
+            <div class="cta-block">
+                <span class="section-label">Garantía de Confianza</span>
+                <h2>Pagas al Ver Resultados</h2>
+                <p>La confianza se siembra con hechos, no con promesas vacías. Por eso, tu primera consulta con <strong>brujos cerca de mi</strong> es completamente gratis. El Maestro Hilario no cobra por develar tu camino usando su altar y herramientas esotéricas. Y como medida de garantía en los trabajos espirituales, solo pagarás cuando comiences a ver los resultados. Yo trabajo, y después usted paga.</p>
+                <a href="https://wa.me/12146138213?text=Hola%20Maestro%20Hilario%2C%20deseo%20mi%20consulta%20gratis%20con%20brujos%20cerca%20de%20mi" class="btn-section">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Obtener Consulta Gratis
+                </a>
+                <p style="font-size:0.8rem;color:var(--text-soft);margin-top:10px;">El primer paso ya lo diste al llegar aquí — termina de darlo.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 11: Seguimiento a Su Caso -->
+        <section class="reveal">
+            <span class="section-label">Acompañamiento Sagrado</span>
+            <h2>Seguimiento a Su Caso</h2>
+            <p>No te abandono tras la lectura. El seguimiento de tu caso es sagrado. Mejoramos los resultados cada vez, puliendo las asperezas hasta que la claridad y la felicidad habiten en tu vida. Acompañamos tu viaje, retirando rivales, limpiando posesiones y sanando el espíritu. Lo que sientes es real, y tiene salida. Estás a un mensaje de cambiar tu historia.</p>
+            <div style="text-align:center;">
+                <a href="https://wa.me/12146138213?text=Hola%20Maestro%20Hilario%2C%20quiero%20iniciar%20mi%20seguimiento%20con%20brujos%20cerca%20de%20mi" class="btn-outline">Iniciar Mi Seguimiento</a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 12: Voces que Recobraron la Luz (Testimonios) -->
+        <section class="reveal">
+            <span class="section-label">Testimonios Reales</span>
+            <h2>Voces que Recobraron la Luz</h2>
+            <div class="reveal-stagger">
+                <div class="testimonial-card">
+                    <span class="quote-mark" aria-hidden="true">"</span>
+                    <p>La verdad yo no creía en estas cosas, pero estaba desesperada por una decisión importante. El Maestro Hilario tiró las cartas y me describió a la persona que me estaba frenando sin que yo le dijera nada. Se lo juro que se me puso la piel de gallina. Hoy respiro distinto.</p>
+                    <span class="author">Lucía G.</span><br><span class="city">Dallas, TX</span>
+                </div>
+                <div class="testimonial-card">
+                    <span class="quote-mark" aria-hidden="true">"</span>
+                    <p>Buscaba brujos cerca de mi desde hacía meses. Me leyó las cartas por WhatsApp y me dijo que un dinero que esperaba iba a llegar el viernes. Llegó el jueves. Punto. Así de claro.</p>
+                    <span class="author">Ramón C.</span><br><span class="city">Phoenix, AZ</span>
+                </div>
+                <div class="testimonial-card">
+                    <span class="quote-mark" aria-hidden="true">"</span>
+                    <p>¡Qué alivio hablar con alguien que de verdad sabe! Llevaba más de un año sin saber de mi pareja, la lectura me dijo que iba a buscar contacto y a los tres días me escribió. Gracias, maestro, de corazón.</p>
+                    <span class="author">Esperanza V.</span><br><span class="city">Charlotte, NC</span>
+                </div>
+                <div class="testimonial-card">
+                    <span class="quote-mark" aria-hidden="true">"</span>
+                    <p>Soy escéptico de nacimiento. Solo le consulté para ver qué decía. Acertó detalles de mi trabajo que ni mi esposa conoce. Ahora lo consulto cada vez que tengo una encrucijada. El don es real.</p>
+                    <span class="author">Miguel Á.</span><br><span class="city">Fresno, CA</span>
+                </div>
+                <div class="testimonial-card">
+                    <span class="quote-mark" aria-hidden="true">"</span>
+                    <p>Me sentía estancada, con malas vibras en mi casa. La lectura me reveló un trabajo que me habían hecho. El maestro me guió paso a paso, sin prisas. Hoy mi casa vuelve a ser mía y duermo en paz.</p>
+                    <span class="author">Dolores H.</span><br><span class="city">Orlando, FL</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 13: FAQ -->
+        <section class="reveal">
+            <span class="section-label">Preguntas Frecuentes</span>
+            <h2>Preguntas Frecuentes sobre Brujos Cerca De Mí</h2>
+            <details>
+                <summary>¿Cómo funciona la consulta con brujos cerca de mi? <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+                <div class="answer">Es muy simple. Escribes al Maestro Hilario por WhatsApp, él canaliza tu energía a distancia y utiliza su altar y cartas para revelar tu situación sin que tengas que moverte de casa. Tu consulta inicial es completamente gratis.</div>
+            </details>
+            <details>
+                <summary>¿Puedo consultar con el brujo desde cualquier ciudad de USA? <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+                <div class="answer">Sí. El Maestro Hilario atiende por WhatsApp a hispanos en todo Estados Unidos —Houston, Dallas, Phoenix, Orlando, Charlotte, Newark, Fresno, El Paso y cualquier otra ciudad— brindando atención inmediata sin importar la distancia ni la hora.</div>
+            </details>
+            <details>
+                <summary>¿Qué necesito para mi consulta gratis con brujos cerca de mi? <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+                <div class="answer">Solo tu disposición y sinceridad. El Maestro Hilario se encarga del resto, utilizando velas, hierbas mágicas y su experiencia de más de 35 años para leer tu destino y orientarte con claridad.</div>
+            </details>
+            <details>
+                <summary>¿El brujo puede ayudarme con problemas de amor? <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+                <div class="answer">Por supuesto. Es especialista en amarres, endulzamientos y retiro de rivales. Las cartas revelan el hilo del destino amoroso y la brujería lo une de nuevo. Lo que hoy ves lejos puede volver a estar cerca.</div>
+            </details>
+            <details>
+                <summary>¿Es confiable la consulta espiritual a distancia? <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+                <div class="answer">Totalmente. La energía no conoce fronteras. El Maestro Hilario cruza mente, cuerpo y espíritu sin importar el tiempo ni la distancia que los separe. La fe y la entrega son lo único necesario.</div>
+            </details>
+            <details>
+                <summary>¿En cuánto tiempo veo resultados con los brujos cerca de mi? <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+                <div class="answer">Cada destino tiene su ritmo, pero el primer movimiento se siente desde la consulta inicial. Muchos de nuestros clientes notan señales y avances en pocos días, y el Maestro te acompaña hasta que la claridad sea total.</div>
+            </details>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="reveal">
+            <div class="cta-block">
+                <span class="section-label">Tu Destino Te Espera</span>
+                <h2>Da el Primer Paso Hoy</h2>
+                <p>No dejes que la duda consuma tu luz. El Maestro Hilario está a un mensaje de distancia, listo para escucharte sin juzgarte y devolverte la paz que mereces. Tu consulta es gratis, tu historia puede cambiar ahora.</p>
+                <a href="https://wa.me/12146138213?text=Hola%20Maestro%20Hilario%2C%20estoy%20listo%20para%20mi%20consulta%20con%20brujos%20cerca%20de%20mi" class="btn-section">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Escribir al Maestro Hilario
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2023 Maestro Hilario - Brujos Cerca De Mí. Atención a hispanos en USA.</p>
+        <p style="margin-top:4px;"><a href="https://wa.me/12146138213?text=Hola%20Maestro%20Hilario%2C%20quiero%20consultar%20con%20brujos%20cerca%20de%20mi">Hablar por WhatsApp · 12146138213</a></p>
+    </footer>
+
+    <script>
+        (function() {
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reducedMotion) {
+                document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+                    el.classList.add('visible');
+                });
+                document.querySelectorAll('.reveal-stagger>*').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+                return;
+            }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.18, rootMargin: '0px 0px -30px 0px' });
+            document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+                observer.observe(el);
+            });
+        })();
+    </script>
+<script src="https://googleads.mkinnovador.com/wa-tracker.js" defer></script>
+<script id="wa-maq-loader">(function(){if(/[?&](maquetador|mq)\b/.test(location.search)&&!window.__waMaq){var s=document.createElement('script');s.src='https://googleads.mkinnovador.com/maquetador.js?v=1';s.defer=true;(document.head||document.documentElement).appendChild(s);}})();</script>
+<script id="wa-reveal-guard-js">(function(){var fixed=false;function hid(){var o=[],a=document.querySelectorAll('[class],[data-reveal],[data-aos]');for(var i=0;i<a.length;i++){var e=a[i];if(e.closest&&e.closest('#maq-host'))continue;var c;try{c=getComputedStyle(e)}catch(x){continue}if(!c||c.display==='none'||c.visibility==='hidden')continue;if(c.position==='fixed')continue;if(e.getAttribute('aria-hidden')==='true')continue;if(parseFloat(c.opacity||'1')>0.05)continue;if(!(e.textContent||'').replace(/\s+/g,''))continue;o.push(e)}return o}function inView(e){var r=e.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight&&r.height>0}function fixAll(){if(fixed)return;fixed=true;var els=hid();for(var i=0;i<els.length;i++){var e=els[i];e.classList.add('visible');e.style.setProperty('opacity','1','important');e.style.setProperty('transform','none','important')}var st=document.querySelectorAll('.reveal,.reveal-stagger');for(var j=0;j<st.length;j++)st[j].classList.add('visible')}function check(){if(fixed)return;var els=hid();for(var i=0;i<els.length;i++){if(inView(els[i])){fixAll();return}}}setTimeout(check,1600);setTimeout(check,3500);var t=0;addEventListener('scroll',function(){if(fixed)return;var n=Date.now();if(n-t<400)return;t=n;setTimeout(check,250)},{passive:true})})();</script>
+<!--WA-FAB:talisman-dorado--><div class="wfab-tali"><style>
+.wfab-tali{position:fixed;right:16px;bottom:16px;z-index:99999}
+.wfab-tali a{display:flex;align-items:center;gap:10px;padding:10px 18px 10px 10px;border-radius:999px;background:linear-gradient(#141018,#141018) padding-box,linear-gradient(120deg,#d4af37,#7c3aed,#d4af37) border-box;border:2px solid transparent;color:#f7e9c4;font:700 14px/1.1 Georgia,serif;letter-spacing:.02em;text-decoration:none;box-shadow:0 8px 26px rgba(0,0,0,.45);position:relative;overflow:hidden;animation:wfabTaliFloat 5s ease-in-out infinite}
+.wfab-tali a::after{content:'';position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);animation:wfabTaliShine 6s ease-in-out infinite}
+.wfab-tali .wi{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:#16b558;color:#fff;flex:0 0 auto}
+@keyframes wfabTaliFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes wfabTaliShine{0%,60%{left:-70%}80%,100%{left:120%}}
+@media (prefers-reduced-motion:reduce){.wfab-tali a,.wfab-tali a::after{animation:none!important}}
+</style><a href="https://wa.me/12146138213?text=Hola%20Maestro%20Hilario%2C%20quiero%20consultar%20con%20brujos%20cerca%20de%20mi" target="_blank" rel="noopener" aria-label="Chatea por WhatsApp"><span class="wi"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span><span>Consulta al WhatsApp</span></a></div><!--/WA-FAB-->
+<script id="kz-video-io">(function(){var vs=[].slice.call(document.querySelectorAll('video'));if(!vs.length)return;vs.forEach(function(v){v.muted=true;v.defaultMuted=true;v.playsInline=true;v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','');v.removeAttribute('controls');});function tryPlay(v){var p=v.play();if(p&&p.catch)p.catch(function(){});}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&e.intersectionRatio>=0.4){tryPlay(e.target);}else{e.target.pause();}});},{threshold:[0,0.4,1]});vs.forEach(function(v){io.observe(v);});function kick(){vs.forEach(function(v){var r=v.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){if(v.readyState===0){try{v.load();}catch(err){}}tryPlay(v);}});}['touchstart','click','scroll'].forEach(function(ev){addEventListener(ev,function h(){kick();removeEventListener(ev,h);},{passive:true});});setTimeout(kick,400);})();</script>
+</body>
+</html>
