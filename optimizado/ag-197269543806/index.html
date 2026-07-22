@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarotista Cerca De Mí | Consulta Gratis y Revela Tu Destino</title>
+<meta name="description" content="¿Buscas un tarotista cerca de mi? El Maestro Hilario ofrece consultas gratis de tarot profesional, amarres y alta brujería. Atención inmediata 24/7 por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #111111;
+    --surface: #1a1a1a;
+    --text: #ffffff;
+    --cta: #25d366;
+    --cta-hover: #1eb858;
+    --accent: #000000;
+    --gold: #c9a227;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { display: block; }
+  h1, h2, h3 { font-family: 'Cinzel', serif; font-weight: 700; line-height: 1.1; }
+  
+  /* Sticky Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(17, 17, 17, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand { font-family: 'Cinzel', serif; font-weight: 900; font-size: 1.1rem; color: var(--text); letter-spacing: 1px; }
+  .brand span { color: var(--gold); }
+  .header-cta {
+    background: var(--cta);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .header-cta:hover { background: var(--cta-hover); transform: translateY(-1px); }
+  .header-cta svg { width: 16px; height: 16px; }
+
+  /* Hero */
+  .hero {
+    min-height: 92svh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 32px 20px;
+  }
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.72) 78%);
+    background-color: rgba(37, 211, 102, 0.08);
+    z-index: 1;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+  .hero h1 {
+    font-size: clamp(2.3rem, 9vw, 3.6rem);
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    margin-bottom: 12px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.2s forwards;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.4s forwards;
+  }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--cta);
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.6s forwards, pulse 2.5s infinite 1s;
+  }
+  .cta-btn:hover { background: var(--cta-hover); transform: translateY(-2px); }
+  .cta-btn svg { width: 24px; height: 24px; }
+  .microtext {
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.8s forwards;
+  }
+  .scroll-arrow {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.5);
+    animation: bounce 2s infinite;
+    z-index: 2;
+  }
+
+  /* Sections */
+  section {
+    padding: 48px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .section-title {
+    text-align: center;
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+  .section-title span { color: var(--gold); }
+  .section-intro {
+    text-align: center;
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    margin: 0 auto 32px;
+    font-size: 1.05rem;
+  }
+  .closing-line {
+    display: block;
+    text-align: center;
+    margin-top: 24px;
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-style: italic;
+    font-size: 1.1rem;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--surface);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+  }
+  .card:hover { transform: translateY(-2px); }
+  .card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 5/6;
+    object-fit: cover;
+    display: block;
+  }
+  .card-body { padding: 24px; }
+  .card-body h3 { font-size: 1.4rem; margin-bottom: 12px; color: var(--text); }
+  .card-body p { color: rgba(255,255,255,0.8); margin-bottom: 16px; }
+  .card-list {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  .card-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.9);
+  }
+  .card-list li::before {
+    content: '✦';
+    color: var(--gold);
+  }
+
+  /* About */
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .about-text p { margin-bottom: 16px; color: rgba(255,255,255,0.85); }
+
+  /* Process */
+  .process-step {
+    background: var(--surface);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    border-left: 4px solid var(--cta);
+  }
+  .process-step h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--gold); }
+
+  /* Testimonials */
+  .testimonials-grid {
+    display: grid;
+    gap: 20px;
+  }
+  .testimonial {
+    background: var(--surface);
+    padding: 24px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .testimonial p { font-style: italic; color: rgba(255,255,255,0.9); margin-bottom: 12px; }
+  .testimonial-author { font-weight: 700; color: var(--gold); font-size: 0.95rem; }
+  .testimonial-location { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+
+  /* FAQ */
+  .faq-item {
+    background: var(--surface);
+    border-radius: 20px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .faq-item summary {
+    padding: 18px 24px;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--text);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '▼';
+    font-size: 0.8rem;
+    color: var(--gold);
+    transition: transform 0.3s ease;
+  }
+  .faq-item[open] summary::after { transform: rotate(180deg); }
+  .faq-item summary:hover { background: rgba(255,255,255,0.03); }
+  .faq-content {
+    padding: 0 24px 18px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  /* Final CTA */
+  .final-cta {
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg), #000);
+    padding: 60px 20px;
+  }
+  .final-cta h2 { font-size: 2rem; margin-bottom: 16px; }
+  .final-cta p { margin-bottom: 32px; color: rgba(255,255,255,0.8); }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 32px 20px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.4);
+    font-size: 0.85rem;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 25px rgba(37, 211, 102, 0.4); }
+    50% { transform: scale(1.03); box-shadow: 0 0 40px rgba(37, 211, 102, 0.6); }
+    100% { transform: scale(1); box-shadow: 0 0 25px rgba(37, 211, 102, 0.4); }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (min-width: 768px) {
+    .about-container { flex-direction: row; align-items: center; }
+    .about-text { flex: 1; }
+    .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    section { padding: 64px 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KGLT8DG');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11495571750"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11495571750');gtag('config','AW-11034559801');gtag('config','AW-682101450');gtag('config','AW-16586320392');gtag('config','AW-16892054054');gtag('config','AW-16568918455');</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%236d28d9'/><text x='32' y='44' font-size='34' text-anchor='middle'>🔮</text></svg>">
+</head>
+<body>
+<script id="wa-slider-guard">(function(){if(window.__waSliderGuard)return;window.__waSliderGuard=1;var o=Element.prototype.scrollIntoView;Element.prototype.scrollIntoView=function(){var c=this.parentElement;while(c&&c!==document.body&&!(c.scrollWidth>c.clientWidth+8))c=c.parentElement;if(c&&c!==document.body){var cr=c.getBoundingClientRect(),er=this.getBoundingClientRect();c.scrollTo({left:c.scrollLeft+(er.left-cr.left)-(cr.width-er.width)/2,behavior:'smooth'});return}return o.apply(this,arguments)};})();</script>
+<script id="wa-touch-guard">(function(){if(window.__waTouchGuard)return;window.__waTouchGuard=1;var o=EventTarget.prototype.addEventListener;EventTarget.prototype.addEventListener=function(t,f,x){if(t==='touchmove'||t==='touchstart'){var p=(typeof x==='object'&&x)?x:{capture:x===true};if(p.passive!==true)x={capture:!!p.capture,once:!!p.once,passive:true};}return o.call(this,t,f,x);};addEventListener('DOMContentLoaded',function(){try{var els=document.body.querySelectorAll('*');for(var i=0;i<els.length;i++){var c=getComputedStyle(els[i]).touchAction;if(c==='none'||c==='pan-x'){els[i].style.touchAction='pan-x pan-y pinch-zoom';}}}catch(e){}});})();</script>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGLT8DG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<header>
+  <div class="brand">Maestro <span>Hilario</span></div>
+  <a href="https://wa.me/12146138213?text=Hola%20Maestro%20Hilario,%20busco%20un%20tarotista%20cerca%20de%20mi%20para%20una%20consulta%20gratis" class="header-cta">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    WhatsApp
+  </a>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+      <source src="https://googleads.mkinnovador.com/banco/videos/ritual-amarre-con-muneco-vudu.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="badge">✦ Maestro Hilario disponible ahora</span>
+      <h1>Tarotista Cerca De Mí: Consulta Gratis Y Revela Tu Destino</h1>
+      <p>Las cartas susurran lo que el silencio oculta. Respuestas inmediatas a tu alcance, sin importar la distancia.</p>
+      <a href="https://wa.me/12146138213?text=Hola%20Maestro%20Hilario,%20busco%20un%20tarotista%20cerca%20de%20mi%20para%20una%20consulta%20gratis" class="cta-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Consulta Gratis por WhatsApp
+      </a>
+      <div class="microtext">⭐ 4.9 · +5.000 consultas · respuesta inmediata</div>
+    </div>
+    <svg class="scroll-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+  </section>
+
+  <!-- ALTA BRUJERIA Y TAROT -->
+  <section class="reveal" id="alta-brujeria">
+    <h2 class="section-title">Alta Brujería y <span>Tarot Profesional</span></h2>
+    <p class="section-intro">Donde la lectura de cartas se entrelaza con la verdadera magia. En la mesa de un tarotista profesional, cada arcano es una llama que ilumina tu sendero.</p>
+    
+    <div class="card">
+      <img src="https://tarotista-cerca-de-mi.paginasdebrujos.store/optimizado/ag-197269543806/banco-mesa-de-tarot-y-rituales-esotericos.webp" alt="Tarotista cerca de mi realizando lectura de cartas" width="800" height="960" loading="lazy" decoding="async">
+      <div class="card-body">
+        <h3>Revelación de Destino y Soluciones Rápidas</h3>
+        <p>No busques más, si buscas un tarotista cerca de ti, el Maestro Hilario tiene la revelación de tu destino en sus manos. Las velas consumen las dudas, las hierbas abren los caminos. Tu presente se teje con hilos invisibles que solo una mirada experta puede desenredar.</p>
+        <ul class="card-list">
+          <li>Amarres de amor y endulzamientos efectivos</li>
+          <li>Retiro de rivales y malas energías</li>
+          <li>Limpieza espiritual y desatado de entidades</li>
+          <li>Protecciones, contras y sanciones espirituales</li>
+          <li>Solución en dinero, salud y maleficios</li>
+        </ul>
+        <a href="https://wa.me/12146138213?text=Hola%20Maestro%20Hilario,%20quiero%20una%20solución%20rápida%20con%20tarotista%20cerca%20de%20mi" class="cta-btn" style="padding: 12px 24px; font-size: 1rem;">
+          Solicitar Solución Rápida
+        </a>
+      </div>
+    </div>
+    <span class="closing-line">El universo habla, y nosotros escuchamos.</span>
+  </section>
+
+  <!-- SOBRE EL MAESTRO -->
+  <section class="reveal" id="sobre-el-maestro">
+    <h2 class="section-title">Sobre el <span>Maestro Hilario</span></h2>
+    <div class="about-container">
+      <div class="about-text">
+        <p>El Maestro Hilario ha caminado junto a las sombras y la luz por más de 35 años. Su mirada traspasa el velo de lo cotidiano, devolviendo la paz a cientos de almas que buscaban un faro en la oscuridad. Su linaje no se aprende en libros, se hereda de la luna y la tierra.</p>
+        <p>Como tarotista 24/7 disponible, su compromiso va más allá de las cartas; es un sanador de destinos. Cada lectura es un ritual, un espacio sagrado donde tu voz encuentra eco en el cosmos. La magia blanca, roja y negra se entrelazan en sus manos con maestría, ofreciéndote soluciones efectivas y de alta calidad. La noche nunca es oscura cuando hay quien sabe encender la luz.</p>
+        <a href="https://wa.me/12146138213?text=Maestro%20Hilario,%20he%20leído%20sobre%20su%20experiia%20como%20tarotista%20cerca%20de%20mi%20y%20quiero%20consultar" class="cta-btn" style="margin-top: 16px; padding: 12px 24px; font-size: 1rem;">
+          Hablar con el Maestro
+        </a>
+      </div>
+    </div>
+    <span class="closing-line">El conocimiento es el refugio del alma.</span>
+  </section>
+
+  <!-- COMO TRABAJA -->
+  <section class="reveal" id="como-trabaja">
+    <h2 class="section-title">¿Cómo Trabaja el <span>Maestro?</span></h2>
+    <p class="section-intro">Cada lectura nace de una consulta previa. El Maestro Hilario canaliza la energía, analizando tu situación para determinar qué tipo de trabajo espiritual necesitas.</p>
+    
+    <div class="process-step">
+      <h3>1. Consulta y Análisis</h3>
+      <p>No se trata de adivinar, sino de ver. A través de las cartas y su altar, desentraña las malas energías, las infidelidades y los bloqueos que apagan tu fuego.</p>
+    </div>
+    <div class="process-step">
+      <h3>2. Canalización de Energía</h3>
+      <p>La buena canalización de energía es la llave que abre la puerta a la certeza. Cuando el convencimiento habita en el espíritu, el trabajo toma raíz y florece.</p>
+    </div>
+    <div class="process-step">
+      <h3>3. Trabajo y Resultado</h3>
+      <p>El destino no se amansa en un día, pero el primer hilo se teje en la primera consulta. Atraemos a tu ser querido en 72 horas, doblegando el orgullo y la indiferencia.</p>
+    </div>
+    <span class="closing-line">Donde otros fracasaron, aquí se triunfa.</span>
+  </section>
+
+  <!-- PAGAS AL VER RESULTADOS -->
+  <section class="reveal" id="garantia">
+    <div class="card" style="background: #000; border: 1px solid var(--gold);">
+      <div class="card-body">
+        <h2 style="margin-bottom: 16px;">Pagas al Ver <span style="color: var(--gold);">Resultados</span></h2>
+        <p>La confianza se siembra con hechos, no con promesas vacías. Por eso, tu primera consulta de tarotista es completamente gratis. El santero no cobrará por develar tu camino usando su altar y herramientas esotéricas.</p>
+        <p>Y como medida de garantía en los trabajos espirituales, solo pagarás cuando comiences a ver los resultados. Yo trabajo, y después usted paga.</p>
+        <a href="https://wa.me/12146138213?text=Maestro%20Hilario,%20vi%20que%20pago%20al%20ver%20resultados.%20Quiero%20mi%20consulta%20gratis%20de%20tarotista" class="cta-btn" style="margin-top: 16px;">
+          Obtener Consulta Gratis
+        </a>
+      </div>
+    </div>
+    <span class="closing-line">El primer paso ya lo diste al llegar aquí — termina de darlo.</span>
+  </section>
+
+  <!-- SEGUIMIENTO -->
+  <section class="reveal" id="seguimiento">
+    <h2 class="section-title">Seguimiento a <span>Su Caso</span></h2>
+    <p class="section-intro">No te abandono tras la lectura. El seguimiento de tu caso es sagrado.</p>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 24px; color: rgba(255,255,255,0.8);">
+      Mejoramos los resultados cada vez, puliendo las asperezas hasta que la claridad y la felicidad habiten en tu vida. Acompañamos tu viaje, retirando rivales, limpiando posesiones y sanando el espíritu. Estás a un mensaje de cambiar tu historia.
+    </p>
+    <div style="text-align: center;">
+      <a href="https://wa.me/12146138213?text=Hola%20Maestro%20Hilario,%20necesito%20seguimiento%20espiritual%20y%20un%20tarotista%20cerca%20de%20mi" class="cta-btn">
+        Iniciar Mi Seguimiento
+      </a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="reveal" id="testimonios">
+    <h2 class="section-title">Voces que <span>Recobraron la Luz</span></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p>"La verdad yo no creía en estas cosas, pero estaba desesperada por una decisión. El Maestro Hilario tiró las cartas y me describió a la persona que me estaba haciendo daño sin que yo le dijera nada. Se lo juro que se me puso la piel de gallina."</p>
+        <div class="testimonial-author">Yolanda R.</div>
+        <div class="testimonial-location">Houston, TX</div>
+      </div>
+      <div class="testimonial">
+        <p>"Buscaba un tarotista cerca de mi hace meses. Me leyó las cartas por WhatsApp y me dijo que un dinero iba a llegar el viernes. Llegó el jueves. Punto."</p>
+        <div class="testimonial-author">Carlos M.</div>
+        <div class="testimonial-location">Phoenix, AZ</div>
+      </div>
+      <div class="testimonial">
+        <p>"¡Qué alivio hablar con alguien que de verdad sabe! Llevaba un año sin saber de mi ex, la lectura me dijo que iba a buscar contacto y a los tres días me escribió. Gracias, maestro."</p>
+        <div class="testimonial-author">Beatriz</div>
+        <div class="testimonial-location">Orlando, FL</div>
+      </div>
+      <div class="testimonial">
+        <p>"Soy escéptico de nacimiento. Solo le consulté para ver qué decía. Acertó detalles de mi trabajo que ni mi esposa sabe. Ahora lo consulto cada vez que tengo una encrucijada."</p>
+        <div class="testimonial-author">Jorge N.</div>
+        <div class="testimonial-location">Newark, NJ</div>
+      </div>
+      <div class="testimonial">
+        <p>"Me sentía estancada, con malas vibras en mi casa. La lectura de tarot me reveló un trabajo que me habían hecho. El maestro me guió paso a paso. Hoy mi casa vuelve a ser mía."</p>
+        <div class="testimonial-author">Maribel S.</div>
+        <div class="testimonial-location">El Paso, TX</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="reveal" id="faq">
+    <h2 class="section-title">Preguntas <span>Frecuentes</span></h2>
+    <div class="faq-item">
+      <summary>¿Cómo funciona la consulta con un tarotista cerca de mi?</summary>
+      <div class="faq-content">Es muy simple. Escribes al Maestro Hilario por WhatsApp, él canaliza tu energía a distancia y utiliza su altar y cartas para revelar tu situación sin que tengas que moverte de tu casa.</div>
+    </div>
+    <div class="faq-item">
+      <summary>¿Puedo consultar al tarotista 24/7 disponible desde cualquier ciudad?</summary>
+      <div class="faq-content">Sí. El Maestro Hilario atiende por WhatsApp a hispanos en todo Estados Unidos, brindando atención inmediata sin importar la distancia ni la hora.</div>
+    </div>
+    <div class="faq-item">
+      <summary>¿Qué necesito para mi consulta gratis de tarotista?</summary>
+      <div class="faq-content">Solo tu disposición y sinceridad. El Maestro Hilario se encarga del resto, utilizando velas, hierbas mágicas y su experiencia de 35 años para leer tu destino.</div>
+    </div>
+    <div class="faq-item">
+      <summary>¿El tarotista profesional puede ayudarme con problemas de amor?</summary>
+      <div class="faq-content">Por supuesto. Especialista en amarres, endulzamientos y retiro de rivales. Las cartas revelan el hilo del destino amoroso y la brujería lo une de nuevo.</div>
+    </div>
+    <div class="faq-item">
+      <summary>¿Es confiable la lectura de tarot a distancia?</summary>
+      <div class="faq-content">Totalmente. La energía no conoce fronteras. El Maestro Hilario cruza mente, cuerpo y espíritu sin importar el tiempo ni la distancia que los separe.</div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta reveal" id="contacto">
+    <h2>Tu Destino Te <span style="color: var(--gold);">Espera</span></h2>
+    <p>No dejes que la duda consuma tu luz. El Maestro Hilario está a un mensaje de distancia, listo para devolverte la paz y el amor que mereces.</p>
+    <a href="https://wa.me/12146138213?text=Maestro%20Hilario,%20quiero%20mi%20consulta%20gratis%20ahora%20mismo%20con%20el%20tarotista%20cerca%20de%20mi" class="cta-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      Escribir al Maestro Hilario
+    </a>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2023 Maestro Hilario - Tarotista Cerca De Mí. Atención a hispanos en USA.</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Lectura de Tarot y Brujería",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Maestro Hilario",
+    "telephone": "+12146138213",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US"
+    },
+    "areaServed": "US"
+  },
+  "name": "Tarotista Cerca De Mí"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo funciona la consulta con un tarotista cerca de mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es muy simple. Escribes al Maestro Hilario por WhatsApp, él canaliza tu energía a distancia y utiliza su altar y cartas para revelar tu situación sin que tengas que moverte de tu casa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo consultar al tarotista 24/7 disponible desde cualquier ciudad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El Maestro Hilario atiende por WhatsApp a hispanos en todo Estados Unidos, brindando atención inmediata sin importar la distancia ni la hora."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué necesito para mi consulta gratis de tarotista?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Solo tu disposición y sinceridad. El Maestro Hilario se encarga del resto, utilizando velas, hierbas mágicas y su experiencia de 35 años para leer tu destino."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El tarotista profesional puede ayudarme con problemas de amor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por supuesto. Especialista en amarres, endulzamientos y retiro de rivales. Las cartas revelan el hilo del destino amoroso y la brujería lo une de nuevo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es confiable la lectura de tarot a distancia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Totalmente. La energía no conoce fronteras. El Maestro Hilario cruza mente, cuerpo y espíritu sin importar el tiempo ni la distancia que los separe."
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(el => observer.observe(el));
+  });
+</script>
+
+<script src="https://googleads.mkinnovador.com/wa-tracker.js" defer></script>
+<script id="wa-maq-loader">(function(){if(/[?&](maquetador|mq)\b/.test(location.search)&&!window.__waMaq){var s=document.createElement('script');s.src='https://googleads.mkinnovador.com/maquetador.js?v=1';s.defer=true;(document.head||document.documentElement).appendChild(s);}})();</script>
+<!--WA-FAB:sello-mistico--><div class="wfab-sello"><style>
+.wfab-sello{position:fixed;right:18px;bottom:18px;z-index:99999}
+.wfab-sello .wr{position:absolute;inset:-9px;border-radius:50%;border:2px dashed rgba(212,175,55,.85);animation:wfabSelloSpin 16s linear infinite;pointer-events:none}
+.wfab-sello a{display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#2fe07c,#0f8a49);color:#fff;box-shadow:0 6px 22px rgba(15,138,73,.5),0 0 16px rgba(147,51,234,.35);animation:wfabSelloGlow 4s ease-in-out infinite;text-decoration:none}
+@keyframes wfabSelloSpin{to{transform:rotate(360deg)}}
+@keyframes wfabSelloGlow{0%,100%{box-shadow:0 6px 22px rgba(15,138,73,.5),0 0 14px rgba(147,51,234,.3)}50%{box-shadow:0 6px 22px rgba(15,138,73,.55),0 0 30px rgba(147,51,234,.6)}}
+@media (prefers-reduced-motion:reduce){.wfab-sello *{animation:none!important}}
+</style><span class="wr"></span><a href="https://wa.me/12146138213?text=Hola%20Maestro%20Hilario,%20busco%20un%20tarotista%20cerca%20de%20mi%20para%20una%20consulta%20gratis" target="_blank" rel="noopener" aria-label="Chatea por WhatsApp"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a></div><!--/WA-FAB-->
+<script id="kz-video-io">(function(){var vs=[].slice.call(document.querySelectorAll('video'));if(!vs.length)return;vs.forEach(function(v){v.muted=true;v.defaultMuted=true;v.playsInline=true;v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','');v.removeAttribute('controls');});function tryPlay(v){var p=v.play();if(p&&p.catch)p.catch(function(){});}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&e.intersectionRatio>=0.4){tryPlay(e.target);}else{e.target.pause();}});},{threshold:[0,0.4,1]});vs.forEach(function(v){io.observe(v);});function kick(){vs.forEach(function(v){var r=v.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){if(v.readyState===0){try{v.load();}catch(err){}}tryPlay(v);}});}['touchstart','click','scroll'].forEach(function(ev){addEventListener(ev,function h(){kick();removeEventListener(ev,h);},{passive:true});});setTimeout(kick,400);})();</script>
+</body>
+</html>
