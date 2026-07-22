@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aprende cómo hacer un amarre de amor en casa con el Maestro Elías. Consulta gratis y resultados efectivos. Amarres de amor caseros y profesionales.">
+    <title>Como Hacer un Amarre de Amor en Casa | Maestro Elías</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #111111;
+            --surface: #ffffff;
+            --text: #ffffff;
+            --text-dark: #1a1a1a;
+            --cta: #1ebe57;
+            --cta-hover: #17a349;
+            --accent: #000000;
+            --radius-sm: 5px;
+            --radius-lg: 20px;
+            --transition: 0.2s ease;
+        }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -0.02em;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 5/6;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(17, 17, 17, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #fff;
+            letter-spacing: -0.01em;
+        }
+        .header-cta {
+            background: var(--cta);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 8px 16px;
+            border-radius: 50px;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: background var(--transition);
+            white-space: nowrap;
+        }
+        .header-cta:hover {
+            background: var(--cta-hover);
+        }
+        .hero {
+            position: relative;
+            min-height: 92svh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, .20) 0%, rgba(0, 0, 0, .72) 78%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px 20px 50px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            animation: heroFadeIn 1s ease-out;
+        }
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            padding: 8px 18px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 0.04em;
+            margin-bottom: 16px;
+        }
+        .hero h1 {
+            font-size: clamp(2.3rem, 9vw, 3.6rem);
+            font-weight: 900;
+            line-height: 1.05;
+            color: #fff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            margin-bottom: 10px;
+            max-width: 500px;
+        }
+        .hero-subtitle {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 24px;
+            max-width: 380px;
+        }
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--cta);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: transform var(--transition), box-shadow var(--transition);
+            animation: pulseCta 2.5s infinite;
+            box-shadow: 0 0 24px rgba(30, 190, 87, 0.45);
+        }
+        @keyframes pulseCta {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 24px rgba(30, 190, 87, 0.45);
+            }
+            50% {
+                transform: scale(1.04);
+                box-shadow: 0 0 38px rgba(30, 190, 87, 0.65);
+            }
+        }
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(30, 190, 87, 0.5);
+        }
+        .hero-trust {
+            margin-top: 16px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+        .scroll-arrow {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            opacity: 0.6;
+            animation: bounceArrow 2s infinite;
+        }
+        @keyframes bounceArrow {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(8px);
+            }
+        }
+        section {
+            padding: 50px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: clamp(1.6rem, 6vw, 2rem);
+            font-weight: 800;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .section-subtitle {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            margin-bottom: 30px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        @media(min-width:768px) {
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            section {
+                padding: 60px 30px;
+            }
+        }
+        .card {
+            background: var(--surface);
+            color: var(--text-dark);
+            border-radius: var(--radius-lg);
+            padding: 24px 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            transition: transform var(--transition), box-shadow var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+        .card img {
+            width: 100%;
+            max-height: 45vh;
+            object-fit: cover;
+            border-radius: 14px;
+            margin-bottom: 14px;
+            aspect-ratio: 5/6;
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+            color: #111;
+        }
+        .card p {
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.5;
+        }
+        .cta-inline {
+            display: inline-block;
+            background: var(--cta);
+            color: #fff;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            margin-top: 14px;
+            transition: background var(--transition);
+        }
+        .cta-inline:hover {
+            background: var(--cta-hover);
+        }
+        .testimonial-card {
+            background: var(--surface);
+            color: var(--text-dark);
+            border-radius: var(--radius-lg);
+            padding: 24px 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            margin-bottom: 16px;
+            font-style: italic;
+            position: relative;
+        }
+        .testimonial-card::before {
+            content: '“';
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            position: absolute;
+            top: -10px;
+            left: 14px;
+            color: #ddd;
+            line-height: 1;
+        }
+        .testimonial-card p {
+            margin-top: 8px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .testimonial-author {
+            font-weight: 700;
+            font-style: normal;
+            display: block;
+            margin-top: 10px;
+            color: #111;
+        }
+        .testimonial-location {
+            font-size: 0.8rem;
+            color: #555;
+            font-style: normal;
+        }
+        details {
+            background: #1a1a1a;
+            border-radius: var(--radius-sm);
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        summary {
+            padding: 16px 20px;
+            font-weight: 700;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            background: #1e1e1e;
+            transition: background var(--transition);
+        }
+        summary:hover {
+            background: #2a2a2a;
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary::after {
+            content: '▾';
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+        details .faq-answer {
+            padding: 16px 20px;
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        footer {
+            background: #0a0a0a;
+            padding: 30px 20px;
+            text-align: center;
+            color: #888;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .btn-block {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--cta);
+            color: #fff;
+            font-weight: 700;
+            padding: 16px 20px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-size: 1rem;
+            margin-top: 20px;
+            transition: background var(--transition);
+        }
+        .btn-block:hover {
+            background: var(--cta-hover);
+        }
+    </style>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KGLT8DG');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11495571750"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11495571750');gtag('config','AW-11034559801');gtag('config','AW-682101450');gtag('config','AW-16586320392');gtag('config','AW-16892054054');gtag('config','AW-16568918455');</script>
+<style id="wa-reveal-guard">@media (prefers-reduced-motion:reduce){.reveal,.reveal-stagger>*,[data-reveal],[data-aos]{opacity:1!important;transform:none!important}}</style><noscript id="wa-reveal-guard-ns"><style>.reveal,.reveal-stagger>*,[data-reveal],[data-aos]{opacity:1!important;transform:none!important}</style></noscript>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%236d28d9'/><text x='32' y='44' font-size='34' text-anchor='middle'>🔮</text></svg>">
+</head>
+<body>
+<script id="wa-slider-guard">(function(){if(window.__waSliderGuard)return;window.__waSliderGuard=1;var o=Element.prototype.scrollIntoView;Element.prototype.scrollIntoView=function(){var c=this.parentElement;while(c&&c!==document.body&&!(c.scrollWidth>c.clientWidth+8))c=c.parentElement;if(c&&c!==document.body){var cr=c.getBoundingClientRect(),er=this.getBoundingClientRect();c.scrollTo({left:c.scrollLeft+(er.left-cr.left)-(cr.width-er.width)/2,behavior:'smooth'});return}return o.apply(this,arguments)};})();</script>
+<script id="wa-touch-guard">(function(){if(window.__waTouchGuard)return;window.__waTouchGuard=1;var o=EventTarget.prototype.addEventListener;EventTarget.prototype.addEventListener=function(t,f,x){if(t==='touchmove'||t==='touchstart'){var p=(typeof x==='object'&&x)?x:{capture:x===true};if(p.passive!==true)x={capture:!!p.capture,once:!!p.once,passive:true};}return o.call(this,t,f,x);};addEventListener('DOMContentLoaded',function(){try{var els=document.body.querySelectorAll('*');for(var i=0;i<els.length;i++){var c=getComputedStyle(els[i]).touchAction;if(c==='none'||c==='pan-x'){els[i].style.touchAction='pan-x pan-y pinch-zoom';}}}catch(e){}});})();</script>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGLT8DG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <header>
+        <span class="header-logo">Maestro Elías</span>
+        <a href="https://wa.me/12146138213?text=Hola%20Maestro%20El%C3%ADas,%20quiero%20aprender%20c%C3%B3mo%20hacer%20un%20amarre%20de%20amor%20en%20casa" class="header-cta" aria-label="WhatsApp Maestro Elías">WhatsApp</a>
+    </header>
+    <main>
+        <section class="hero">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="https://googleads.mkinnovador.com/banco/videos/ritual-de-amor-con-velas-de-pareja-caratula.webp" fetchpriority="high">
+                <source src="https://googleads.mkinnovador.com/banco/videos/ritual-de-amor-con-velas-de-pareja.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-badge">✦ Maestro disponible ahora</span>
+                <h1>Como Hacer un Amarre de Amor en Casa</h1>
+                <p class="hero-subtitle">Descubre el poder que ya vive en ti y recupera a quien amas con la guía del Maestro Elías</p>
+                <a href="https://wa.me/12146138213?text=Hola%20Maestro%20El%C3%ADas,%20quiero%20consultar%20c%C3%B3mo%20hacer%20un%20amarre%20de%20amor%20en%20casa" class="btn-cta">Escríbele al Maestro Elías</a>
+                <p class="hero-trust">⭐ 4.9 · +5.000 consultas · Respuesta inmediata</p>
+                <div class="scroll-arrow">⌄</div>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2 class="section-title">Alta Brujería Poderosa</h2>
+            <p class="section-subtitle">Donde otros han fracasado, el Maestro Elías triunfa con rituales de alta calidad</p>
+            <div class="card-grid">
+                <div class="card">
+                    
+                    <h3>Amarres Efectivos</h3>
+                    <p>Atraemos y regresamos al ser querido en 72 horas, sin importar edad, sexo, tiempo ni distancia. Cruzamos mente, cuerpo y espíritu.</p>
+                    <a href="https://wa.me/12146138213?text=Quiero%20un%20amarre%20poderoso%20Maestro%20El%C3%ADas" class="cta-inline">Consulta Gratis</a>
+                </div>
+                <div class="card">
+                    
+                    <h3>Dominio Espiritual</h3>
+                    <p>Doblegamos infidelidad, indiferencia, rebeldía y orgullo. Retiramos rivales y limpiamos toda energía negativa que bloquea tu amor.</p>
+                    <a href="https://wa.me/12146138213?text=Necesito%20limpiar%20mi%20relaci%C3%B3n%20Maestro" class="cta-inline">Escríbeme Ya</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2 class="section-title">Tarot Profesional</h2>
+            <p class="section-subtitle">Revelación de destino con una lectura profunda y personalizada</p>
+            <div class="card" style="max-width:400px;margin:0 auto;">
+                
+                <h3>Lectura de Tarot Gratis</h3>
+                <p>El Maestro Elías usa su altar y herramientas esotéricas para develar tu consulta y mostrarte el camino hacia el amor que mereces.</p>
+                <a href="https://wa.me/12146138213?text=Quiero%20mi%20lectura%20de%20tarot%20gratis%20Maestro%20El%C3%ADas" class="cta-inline">Quiero mi Lectura</a>
+            </div>
+        </section>
+
+        <section class="reveal" id="sobre-el-maestro">
+            <h2 class="section-title">Sobre el Maestro Elías</h2>
+            <div class="card" style="max-width:500px;margin:0 auto;">
+                
+                <h3>35 Años de Sabiduría</h3>
+                <p>Soy un brujo altamente experimentado con más de 35 años de práctica en el arte. He forjado mi reputación ayudando a cientos de almas a conquistar sus deseos amorosos, éxito profesional y poder personal. Mi linaje espiritual me permite canalizar energías que otros no alcanzan.</p>
+                <p>No importa cuán oscuro parezca tu camino: yo he visto peores y los he revertido. Tú tienes el poder de cambiar tu destino y yo estoy aquí para guiarte. Basta de esperar a que el destino decida por ti.</p>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2 class="section-title">Consulta Gratis con el Maestro Elías</h2>
+            <p class="section-subtitle">Toma hoy la decisión que llevas meses posponiendo</p>
+            <div style="text-align:center;">
+                <a href="https://wa.me/12146138213?text=Hola%20Maestro%20El%C3%ADas,%20deseo%20mi%20consulta%20gratis%20sobre%20amor" class="btn-block">📞 Consulta en WhatsApp ¡Gratis!</a>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2 class="section-title">¿Cómo Trabaja el Maestro Elías?</h2>
+            <div class="card" style="max-width:500px;margin:0 auto;">
+                
+                <p style="margin-top:10px;">Cada caso es debidamente analizado con una consulta previa. Determinamos qué tipo de trabajo necesitas para garantizar el buen desarrollo del proceso. La clave es una canalización de energía impecable y el convencimiento total de que el trabajo funcionará al 100%.</p>
+                <p>Tú traes la voluntad; yo pongo el poder y la experiencia. Juntos, nada se nos resiste.</p>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2 class="section-title">Pagas al Ver Resultados</h2>
+            <p class="section-subtitle">Tú solo pagas cuando el universo ya ha respondido</p>
+            <div class="card" style="max-width:400px;margin:0 auto;text-align:center;">
+                <span style="font-size:3rem;">🛡️</span>
+                <h3>Garantía de Confianza</h3>
+                <p>El Maestro Elías trabaja primero y tú pagas después, cuando veas resultados tangibles en tu situación amorosa. Así de seguro está de su poder.</p>
+                <a href="https://wa.me/12146138213?text=Maestro%20El%C3%ADas,%20cu%C3%A9nteme%20sobre%20su%20garant%C3%ADa" class="cta-inline">Quiero Saber Más</a>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2 class="section-title">Seguimiento a tu Caso</h2>
+            <p class="section-subtitle">No te dejamos solo después del ritual</p>
+            <div class="card" style="max-width:500px;margin:0 auto;">
+                
+                <p>Hacemos un acompañamiento cercano de tu proceso y mejoramos cada vez los resultados. El vínculo con el maestro permanece hasta que tu felicidad sea plena.</p>
+                <a href="https://wa.me/12146138213?text=Maestro%20necesito%20seguimiento%20para%20mi%20caso" class="cta-inline">Háblame Ahora</a>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2 class="section-title">Testimonios Reales</h2>
+            <div class="testimonial-card">
+                <p>La verdad yo no creía en estas cosas, pero llevaba dos años con una ruptura que no superaba. Hice lo que el Maestro Elías me indicó y en 5 días mi ex me llamó llorando. No lo podía creer.</p>
+                <span class="testimonial-author">Fabio López</span>
+                <span class="testimonial-location">Houston, TX</span>
+            </div>
+            <div class="testimonial-card">
+                <p>Se lo juro que intenté de todo: psicólogos, viajes, otras relaciones. Nada funcionó hasta que hablé con Elías. Su ritual encendió algo que trajo a mi esposa de vuelta en una semana.</p>
+                <span class="testimonial-author">Mariana G.</span>
+                <span class="testimonial-location">Phoenix, AZ</span>
+            </div>
+            <div class="testimonial-card">
+                <p>Yo solo quería saber cómo hacer un amarre de amor en casa, pero él me enseñó que necesitaba algo más fuerte. Hicimos un trabajo a distancia y los resultados fueron rapidísimos. Gracias totales.</p>
+                <span class="testimonial-author">Carlos Rivas</span>
+                <span class="testimonial-location">Charlotte, NC</span>
+            </div>
+            <div class="testimonial-card">
+                <p>Estaba escéptico pero desesperado. Mi pareja se había ido con otra persona. El Maestro Elías me guió paso a paso y en menos de 72 horas volvió a buscarme. Increíble pero real.</p>
+                <span class="testimonial-author">Yolanda R.</span>
+                <span class="testimonial-location">Fresno, CA</span>
+            </div>
+            <div class="testimonial-card">
+                <p>¡Mi amarre funcionó tan rápido que hasta miedo me dio! A los 3 días mi amor estaba en mi puerta pidiéndome perdón. Elías es un verdadero maestro.</p>
+                <span class="testimonial-author">Javier Méndez</span>
+                <span class="testimonial-location">El Paso, TX</span>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <details>
+                <summary>¿Cómo hacer un amarre de amor en casa realmente efectivo?</summary>
+                <div class="faq-answer">Hacer un amarre casero requiere concentración, materiales específicos y, sobre todo, guía experta. El Maestro Elías te instruye paso a paso para que no malgastes energía ni cometas errores que anulen el hechizo. Él canaliza el poder mientras tú pones la intención.</div>
+            </details>
+            <details>
+                <summary>¿Los amarres de amor caseros funcionan sin ayuda profesional?</summary>
+                <div class="faq-answer">Algunos rituales simples pueden tener efecto menor, pero para resultados profundos y duraderos, necesitas un maestro que sepa dominar las energías. Elías lleva 35 años logrando lo que otros no han podido.</div>
+            </details>
+            <details>
+                <summary>¿Cómo se hace un retorno de pareja en casa?</summary>
+                <div class="faq-answer">Se combinan elementos como velas, fotos y palabras de poder, pero la clave es la conexión espiritual que el Maestro Elías establece contigo y con tu ser amado. Sin esa conexión, el ritual es solo un gesto vacío.</div>
+            </details>
+            <details>
+                <summary>¿Cuánto tardan en verse los resultados de un amarre?</summary>
+                <div class="faq-answer">En la mayoría de los casos, los clientes reportan señales claras en 72 horas o menos. El tiempo exacto depende de la complejidad del caso y de la resistencia de la otra persona, pero Elías garantiza seguimiento hasta el éxito.</div>
+            </details>
+            <details>
+                <summary>¿Es seguro hacer un amarre en casa sin dañar a nadie?</summary>
+                <div class="faq-answer">Totalmente. El Maestro Elías solo trabaja con energías blancas y rituales que no causan daño. Su prioridad es unir, no lastimar. La ética espiritual es su bandera.</div>
+            </details>
+        </section>
+
+        <section class="reveal" style="text-align:center;">
+            <h2 class="section-title">¿Listo para cambiar tu destino?</h2>
+            <p class="section-subtitle">No dejes pasar un día más. El amor que te pertenece te está esperando.</p>
+            <a href="https://wa.me/12146138213?text=Maestro%20El%C3%ADas,%20estoy%20listo%20para%20mi%20consulta%20gratis" class="btn-block">Toma la Decisión Ahora — Escríbeme</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Maestro Elías. Todos los derechos reservados. Consulta espiritual confidencial.</p>
+        <p style="margin-top:4px;">Resultados basados en la fe y la energía de cada persona. Este servicio no sustituye consejo médico o profesional.</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (mediaQuery.matches) {
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+        }
+        mediaQuery.addEventListener('change', (e) => {
+            if (e.matches) {
+                document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+            }
+        });
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+                "@type": "Question",
+                "name": "¿Cómo hacer un amarre de amor en casa realmente efectivo?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Hacer un amarre casero requiere concentración, materiales específicos y, sobre todo, guía experta. El Maestro Elías te instruye paso a paso para que no malgastes energía ni cometas errores que anulen el hechizo."
+                }
+            }, {
+                "@type": "Question",
+                "name": "¿Los amarres de amor caseros funcionan sin ayuda profesional?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Algunos rituales simples pueden tener efecto menor, pero para resultados profundos y duraderos, necesitas un maestro que sepa dominar las energías. Elías lleva 35 años logrando lo que otros no han podido."
+                }
+            }, {
+                "@type": "Question",
+                "name": "¿Cómo se hace un retorno de pareja en casa?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Se combinan elementos como velas, fotos y palabras de poder, pero la clave es la conexión espiritual que el Maestro Elías establece contigo y con tu ser amado."
+                }
+            }, {
+                "@type": "Question",
+                "name": "¿Cuánto tardan en verse los resultados de un amarre?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "En la mayoría de los casos, los clientes reportan señales claras en 72 horas o menos. El tiempo exacto depende de la complejidad del caso."
+                }
+            }, {
+                "@type": "Question",
+                "name": "¿Es seguro hacer un amarre en casa sin dañar a nadie?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Totalmente. El Maestro Elías solo trabaja con energías blancas y rituales que no causan daño. Su prioridad es unir, no lastimar."
+                }
+            }]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Amarre de Amor en Casa",
+            "provider": {
+                "@type": "Person",
+                "name": "Maestro Elías",
+                "description": "Brujo experto con más de 35 años en amarres, tarot y alta brujería."
+            },
+            "areaServed": "Estados Unidos",
+            "description": "Consulta gratis para aprender cómo hacer un amarre de amor en casa con guía profesional del Maestro Elías.",
+            "serviceType": "Amarre de amor, retorno de pareja, limpieza espiritual",
+            "url": "https://como-hacer-un-amarre-de-amor-en-casa.paginasdebrujos.store"
+        }
+    </script>
+<script src="https://googleads.mkinnovador.com/wa-tracker.js" defer></script>
+<script id="wa-maq-loader">(function(){if(/[?&](maquetador|mq)\b/.test(location.search)&&!window.__waMaq){var s=document.createElement('script');s.src='https://googleads.mkinnovador.com/maquetador.js?v=1';s.defer=true;(document.head||document.documentElement).appendChild(s);}})();</script>
+<script id="wa-reveal-guard-js">(function(){var fixed=false;function hid(){var o=[],a=document.querySelectorAll('[class],[data-reveal],[data-aos]');for(var i=0;i<a.length;i++){var e=a[i];if(e.closest&&e.closest('#maq-host'))continue;var c;try{c=getComputedStyle(e)}catch(x){continue}if(!c||c.display==='none'||c.visibility==='hidden')continue;if(c.position==='fixed')continue;if(e.getAttribute('aria-hidden')==='true')continue;if(parseFloat(c.opacity||'1')>0.05)continue;if(!(e.textContent||'').replace(/\s+/g,''))continue;o.push(e)}return o}function inView(e){var r=e.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight&&r.height>0}function fixAll(){if(fixed)return;fixed=true;var els=hid();for(var i=0;i<els.length;i++){var e=els[i];e.classList.add('visible');e.style.setProperty('opacity','1','important');e.style.setProperty('transform','none','important')}var st=document.querySelectorAll('.reveal,.reveal-stagger');for(var j=0;j<st.length;j++)st[j].classList.add('visible')}function check(){if(fixed)return;var els=hid();for(var i=0;i<els.length;i++){if(inView(els[i])){fixAll();return}}}setTimeout(check,1600);setTimeout(check,3500);var t=0;addEventListener('scroll',function(){if(fixed)return;var n=Date.now();if(n-t<400)return;t=n;setTimeout(check,250)},{passive:true})})();</script>
+<!--WA-FAB:fuego-sagrado--><div class="wfab-fuego"><style>
+.wfab-fuego{position:fixed;right:16px;bottom:16px;z-index:99999}
+.wfab-fuego a{display:flex;align-items:center;gap:10px;padding:10px 17px 10px 10px;border-radius:999px;background:linear-gradient(160deg,#3b0d0d,#7f1d1d);border:1.5px solid rgba(251,146,60,.65);color:#fde8d7;font:700 13.5px/1.1 'Segoe UI',sans-serif;text-decoration:none;box-shadow:0 8px 24px rgba(127,29,29,.5);position:relative;overflow:hidden}
+.wfab-fuego a::before,.wfab-fuego a::after{content:'';position:absolute;bottom:-4px;width:5px;height:5px;border-radius:50%;background:#fb923c;opacity:0;animation:wfabFuegoUp 3.5s ease-in infinite}
+.wfab-fuego a::before{left:26%}
+.wfab-fuego a::after{left:64%;animation-delay:1.7s}
+.wfab-fuego .wi{display:flex;align-items:center;justify-content:center;width:37px;height:37px;border-radius:50%;background:#17b357;color:#fff;flex:0 0 auto}
+@keyframes wfabFuegoUp{0%{transform:translateY(0);opacity:0}15%{opacity:.9}100%{transform:translateY(-46px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.wfab-fuego a::before,.wfab-fuego a::after{animation:none!important}}
+</style><a href="https://wa.me/12146138213?text=Hola%20Maestro%20El%C3%ADas,%20quiero%20aprender%20c%C3%B3mo%20hacer%20un%20amarre%20de%20amor%20en%20casa" target="_blank" rel="noopener" aria-label="Chatea por WhatsApp"><span class="wi"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span><span>Consulta inmediata 🔥</span></a></div><!--/WA-FAB-->
+<script id="kz-video-io">(function(){var vs=[].slice.call(document.querySelectorAll('video'));if(!vs.length)return;vs.forEach(function(v){v.muted=true;v.defaultMuted=true;v.playsInline=true;v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','');v.removeAttribute('controls');});function tryPlay(v){var p=v.play();if(p&&p.catch)p.catch(function(){});}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&e.intersectionRatio>=0.4){tryPlay(e.target);}else{e.target.pause();}});},{threshold:[0,0.4,1]});vs.forEach(function(v){io.observe(v);});function kick(){vs.forEach(function(v){var r=v.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){if(v.readyState===0){try{v.load();}catch(err){}}tryPlay(v);}});}['touchstart','click','scroll'].forEach(function(ev){addEventListener(ev,function h(){kick();removeEventListener(ev,h);},{passive:true});});setTimeout(kick,400);})();</script>
+</body>
+</html>
